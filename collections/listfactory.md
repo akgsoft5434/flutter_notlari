@@ -5,8 +5,10 @@ Belirli bir uzunlukta, aynı öğeyle doldurulmuş bir liste oluşturur.
 
 ```dart
 var sabitListe = List.filled(5, 0); // [0, 0, 0, 0, 0]
-growable: true dersen listeye sonradan eleman eklenebilir.
+
 ```
+`growable: true` dersen listeye sonradan eleman eklenebilir.
+
 Tüm elemanlar aynı referansa sahipse dikkatli olunmalı (özellikle nesnelerde).
 
 ## 2. List.generate(int length, E generator(int index), {bool growable = true})
