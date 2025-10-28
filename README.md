@@ -1,8 +1,11 @@
 # 📘 Flutter Dersleri
 Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmıştır.
-## 📂 Konular
+## 📂 Collections
 
-- [Listeler](konular/collections.md)
+- [Listeler](collections/list.md)
+- [Set Yapısı](collections/list.md)
+- [Map Yapısı](collections/list.md)
+  
 - [Fonksiyonlar](konular/fonksiyonlar.md)
 - [Setler](konular/setler.md)
 - [Mapler](konular/mapler.md)
