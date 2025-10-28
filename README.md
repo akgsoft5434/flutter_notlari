@@ -8,3 +8,6 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 - [Set Yapısı](collections/sets.md)
 - [Map Yapısı](collections/maps.md)
   
+## 📂 ListView
+
+- [Card Nesnesi](listtypes/listview.md)
