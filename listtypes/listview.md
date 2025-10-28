@@ -89,9 +89,31 @@ class MyApp extends StatelessWidget {
 }
 ```
 
+### 🟢 Avantajı:
+Sadece ekranda görünen elemanlar oluşturulur.
+Böylece performans artar, özellikle uzun listelerde çok önemlidir.
 
+## 🎯 4. ListView.separated ile Aralara Ayırıcı (Divider) Ekleme
 
+Liste elemanlarının arasına kolayca çizgi, boşluk veya özel widget eklemek için kullanılır.
 
+```dart
+ListView.separated(
+  itemCount: 5,
+  itemBuilder: (context, index) {
+    return ListTile(
+      title: Text("Öğe $index"),
+      leading: const Icon(Icons.star),
+    );
+  },
+  separatorBuilder: (context, index) {
+    return const Divider(
+      color: Colors.grey,
+      thickness: 1,
+    );
+  },
+)
+```
 
 
 
