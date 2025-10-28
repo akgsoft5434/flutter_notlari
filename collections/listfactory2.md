@@ -1,28 +1,29 @@
-📚 Dart List Oluşturma Yöntemleri
+# 📚 Dart List Oluşturma Yöntemleri
 
 Dart’ta List (liste), birden fazla değeri sıralı biçimde saklamamızı sağlar.
 Aşağıda List.empty, List.filled, List.generate ve diğer oluşturma yöntemlerinin açıklamaları ve örnekleri yer almaktadır.
 
-🧱 1. List.empty
+## 🧱 1. List.empty
+```dart
 List<E>.empty({ bool growable = false })
-
+```
 
 Boş bir liste oluşturur.
 
 growable = true yapılırsa listeye sonradan eleman eklenebilir.
 
 Varsayılan olarak (growable: false) sabit boyutludur ve değiştirilemez.
-
+```dart
 var a = List<int>.empty(); // Sabit boş liste
 var b = List<String>.empty(growable: true);
 
 b.add('merhaba'); // ✅
 a.add(1);         // ❌ Hata: liste sabit boyutlu
-
+```
 
 💡 Not: List.empty(growable: true) genellikle [] ile aynı işlevi görür.
 
-🧱 2. List.filled
+## 🧱 2. List.filled
 List<E>.filled(int length, E fill, { bool growable = false })
 
 
@@ -52,7 +53,7 @@ var matrix = List<List<int>>.generate(3, (_) => []);
 matrix[0].add(1);
 print(matrix); // [[1], [], []]
 
-🧱 3. List.generate
+## 🧱 3. List.generate
 List<E>.generate(int length, E generator(int index), { bool growable = false })
 
 
@@ -71,7 +72,7 @@ var matris = List<List<int>>.generate(3, (_) => []);
 matris[0].add(42);
 print(matris); // [[42], [], []]
 
-🧱 4. List.from
+## 🧱 4. List.from
 List<E>.from(Iterable elements, { bool growable = true })
 
 
@@ -86,7 +87,7 @@ copy[0] = 99;
 print(original); // [1, 2, 3]
 print(copy);     // [99, 2, 3]
 
-🧱 5. List.of
+## 🧱 5. List.of
 List<E>.of(Iterable<E> elements, { bool growable = true })
 
 
@@ -97,7 +98,7 @@ var cities = ['Ankara', 'İzmir', 'İstanbul'];
 var copy = List<String>.of(cities, growable: false);
 print(copy); // [Ankara, İzmir, İstanbul]
 
-🧱 6. List.unmodifiable
+## 🧱 6. List.unmodifiable
 List<E>.unmodifiable(Iterable elements)
 
 
@@ -111,7 +112,7 @@ list.add(4); // ❌ UnsupportedError
 
 Kullanım amacı: Dışarıya liste dönerken verinin değiştirilememesini sağlamak.
 
-🧱 7. const Listeler
+## 🧱 7. const Listeler
 const sabitListe = ['A', 'B', 'C'];
 
 
@@ -124,7 +125,7 @@ Performans ve güvenlik açısından avantajlıdır.
 const renkler = ['Kırmızı', 'Mavi'];
 // renkler.add('Yeşil'); ❌ Derleme hatası
 
-🧱 8. Kopyalama ve Birleştirme
+## 🧱 8. Kopyalama ve Birleştirme
 Kopyalama
 var liste = [1, 2, 3];
 var kopya1 = List.of(liste);
@@ -136,7 +137,7 @@ var liste2 = [4, 5, 6];
 var birlesik = [...liste1, ...liste2];
 print(birlesik); // [1, 2, 3, 4, 5, 6]
 
-🧱 9. Özet Tablo
+## 🧱 9. Özet Tablo
 Yapı	Açıklama	Büyüyebilir mi?	Değiştirilebilir mi?
 List.empty()	Boş liste oluşturur	❌ (varsayılan)	❌
 List.empty(growable: true)	Boş ama eklenebilir	✅	✅
@@ -146,7 +147,7 @@ List.from()	Başka listeden kopya	✅	✅
 List.of()	Tip güvenli kopya	✅	✅
 List.unmodifiable()	Salt okunur kopya	❌	❌
 const []	Derleme zamanı sabiti	❌	❌
-🧱 10. Örnek Uygulama
+## 🧱 10. Örnek Uygulama
 void main() {
   // empty
   var a = List<int>.empty(growable: true);
