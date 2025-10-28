@@ -14,7 +14,7 @@ Dart dilinde List sınıfı, farklı ihtiyaçlara göre optimize edilmiş çeşi
 
 Kullanım Senaryoları
 
-1. List.filled(int length, E fill, {bool growable = false})
+## 1. List.filled(int length, E fill, {bool growable = false})
 Belirli bir uzunlukta, aynı öğeyle doldurulmuş bir liste oluşturur.
 
 dart
@@ -23,7 +23,7 @@ growable: true → Listeye sonradan eleman eklenebilir.
 
 Tüm elemanlar aynı referansa sahipse dikkatli olunmalı (özellikle nesnelerde).
 
-2. List.generate(int length, E generator(int index), {bool growable = true})
+## 2. List.generate(int length, E generator(int index), {bool growable = true})
 Her elemanı bir fonksiyonla oluşturarak liste üretir.
 
 dart
@@ -32,7 +32,7 @@ Dinamik içerik üretimi için idealdir.
 
 growable parametresi ile genişletilebilirlik kontrol edilir.
 
-3. List.unmodifiable(Iterable elements)
+## 3. List.unmodifiable(Iterable elements)
 Değiştirilemez (immutable) bir liste oluşturur.
 
 dart
@@ -42,7 +42,7 @@ Güvenli veri paylaşımı için kullanılır.
 
 Performans açısından sabit veri yapılarında tercih edilir.
 
-4. List.empty({bool growable = false})
+## 4. List.empty({bool growable = false})
 Boş bir liste oluşturur.
 
 dart
@@ -50,7 +50,7 @@ var bos = List.empty(growable: true);
 bos.add(1); // [1]
 growable: false ise sabit uzunlukta boş liste olur (ekleme yapılamaz).
 
-5. List.from(Iterable elements, {bool growable = true})
+## 5. List.from(Iterable elements, {bool growable = true})
 Var olan bir iterable’dan yeni bir liste oluşturur.
 
 dart
@@ -60,14 +60,14 @@ Derin kopya değildir; referanslar korunur.
 
 growable ile genişletilebilirlik ayarlanabilir.
 
-6. List.of(Iterable<E> elements, {bool growable = true})
+## 6. List.of(Iterable<E> elements, {bool growable = true})
 List.from ile aynıdır, ancak daha semantik bir alternatiftir.
 
 dart
 var yeni = List.of([10, 20, 30]);
 Daha okunabilir kod için tercih edilebilir.
 
-7. List.castFrom<S, T>(List<S> source)
+## 7. List.castFrom<S, T>(List<S> source)
 Bir listeyi farklı türdeki listeye dönüştürür (runtime'da).
 
 dart
@@ -77,7 +77,9 @@ Tip güvenliği sağlar.
 
 as operatörüne göre daha kontrollüdür.
 
-🎯 Ne Zaman Hangi Yapı Kullanılır?
+# 🎯 Ne Zaman Hangi Yapı Kullanılır?
+
+
 Senaryo	Kullanılacak Fabrika
 Sabit uzunlukta, aynı değerle dolu liste	List.filled
 Dinamik içerik üretimi	List.generate
@@ -85,7 +87,8 @@ Değiştirilemez liste	List.unmodifiable
 Boş ama genişletilebilir liste	List.empty(growable: true)
 Mevcut iterable’dan kopya	List.from veya List.of
 Tip dönüşümü	List.castFrom
-📌 Notlar
+
+# 📌 Notlar
 List.generate ile dinamik veri üretimi (örneğin anket soruları) kolayca yapılabilir.
 
 List.unmodifiable sabit seçenekler tanımlamak için idealdir.
