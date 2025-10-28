@@ -3,8 +3,8 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 ## 📂 Collections
 
 - [Listeler](collections/list.md)
-- [Set Yapısı](collections/list.md)
-- [Map Yapısı](collections/list.md)
+- [Set Yapısı](collections/sets.md)
+- [Map Yapısı](collections/maps.md)
   
 - [Fonksiyonlar](konular/fonksiyonlar.md)
 - [Setler](konular/setler.md)
@@ -12,4 +12,4 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 
 
 
-[⬅ Ana Sayfaya Dön](../README.md)
+
