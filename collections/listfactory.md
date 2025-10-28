@@ -1,20 +1,16 @@
 # 🏗️ Dart List Fabrika Yapıları
 Dart dilinde List sınıfı, farklı ihtiyaçlara göre optimize edilmiş çeşitli fabrika yapıları sunar. Bu döküman, Dart'ta liste üretimi için kullanılan fabrika constructor'larını detaylıca açıklar.
 
-📚 İçindekiler
-List.filled
+## 📚 İçindekiler
+- [List.filled](#1-listfilled)
+- [List.generate](#2-listgenerate)
+- [List.unmodifiable](#3-listunmodifiable)
+- [List.empty](#4-listempty)
+- [List.from](#5-listfrom)
+- [List.of](#6-listof)
+- [List.castFrom](#7-listcastfrom)
+- [Kullanım Senaryoları](#🎯-ne-zaman-hangi-yapı-kullanılır)
 
-List.generate
-
-List.unmodifiable
-
-List.empty
-
-List.from
-
-List.of
-
-List.castFrom
 
 Kullanım Senaryoları
 
