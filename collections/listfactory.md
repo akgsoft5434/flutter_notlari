@@ -73,6 +73,7 @@ var yeni = List.of([10, 20, 30]);
 Daha okunabilir kod için tercih edilebilir.
 
 ## 7. List.castFrom<S, T>(List<S> source)
+
 Bir listeyi farklı türdeki listeye dönüştürür (runtime'da).
 
 ```dart
