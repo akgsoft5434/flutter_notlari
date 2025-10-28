@@ -167,15 +167,19 @@ print(birlesik); // [1, 2, 3, 4, 5, 6]
 
 
 ## 🧱 9. Özet Tablo
-Yapı	Açıklama	Büyüyebilir mi?	Değiştirilebilir mi?
-List.empty()	Boş liste oluşturur	❌ (varsayılan)	❌
-List.empty(growable: true)	Boş ama eklenebilir	✅	✅
-List.filled()	Sabit uzunluk, aynı değerlerle dolu	❌ (varsayılan)	✅
-List.generate()	Fonksiyonla dinamik üretim	❌ (varsayılan)	✅
-List.from()	Başka listeden kopya	✅	✅
-List.of()	Tip güvenli kopya	✅	✅
-List.unmodifiable()	Salt okunur kopya	❌	❌
-const []	Derleme zamanı sabiti	❌	❌
+
+| Yapı                         | Açıklama                            | Büyüyebilir mi? | Değiştirilebilir mi? |
+| ---------------------------- | ----------------------------------- | --------------- | -------------------- |
+| `List.empty()`               | Boş liste oluşturur                 | ❌ (varsayılan)  | ❌                    |
+| `List.empty(growable: true)` | Boş ama eklenebilir                 | ✅               | ✅                    |
+| `List.filled()`              | Sabit uzunluk, aynı değerlerle dolu | ❌ (varsayılan)  | ✅                    |
+| `List.generate()`            | Fonksiyonla dinamik üretim          | ❌ (varsayılan)  | ✅                    |
+| `List.from()`                | Başka listeden kopya                | ✅               | ✅                    |
+| `List.of()`                  | Tip güvenli kopya                   | ✅               | ✅                    |
+| `List.unmodifiable()`        | Salt okunur kopya                   | ❌               | ❌                    |
+| `const []`                   | Derleme zamanı sabiti               | ❌               | ❌                    |
+
+
 ## 🧱 10. Örnek Uygulama
 
 ```dart
@@ -201,10 +205,13 @@ void main() {
 }
 ```
 🧩 Ne Zaman Hangisini Kullanmalı?
-İhtiyaç	Kullanılacak Yapı
-Boş ve sonradan dolacak liste	[] veya List.empty(growable: true)
-Sabit uzunluk, aynı başlangıç değeri	List.filled()
-Her eleman özel hesaplanacaksa	List.generate()
-Var olan listeden kopya	List.of()
-Değiştirilemez liste	List.unmodifiable()
-Tam sabit (compile-time) liste	const
+
+| İhtiyaç                              | Kullanılacak Yapı                      |
+| ------------------------------------ | -------------------------------------- |
+| Boş ve sonradan dolacak liste        | `[]` veya `List.empty(growable: true)` |
+| Sabit uzunluk, aynı başlangıç değeri | `List.filled()`                        |
+| Her eleman özel hesaplanacaksa       | `List.generate()`                      |
+| Var olan listeden kopya              | `List.of()`                            |
+| Değiştirilemez liste                 | `List.unmodifiable()`                  |
+| Tam sabit (compile-time) liste       | `const`                                |
+
