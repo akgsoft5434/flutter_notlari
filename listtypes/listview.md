@@ -115,19 +115,98 @@ ListView.separated(
 )
 ```
 
+📘 Kullanım Amacı:
+Liste öğeleri arasında çizgi veya boşluk eklemek.
+
+## 🧭 5. Yatay (Horizontal) Liste
+
+Yatay kaydırma yapmak için scrollDirection parametresi kullanılır.
+```dart
+ListView(
+  scrollDirection: Axis.horizontal,
+  children: [
+    Container(width: 120, color: Colors.red),
+    Container(width: 120, color: Colors.green),
+    Container(width: 120, color: Colors.blue),
+    Container(width: 120, color: Colors.orange),
+  ],
+)
+```
+📘 Not:
+Yatay liste genelde ürün kaydırma, kategori gösterimi gibi alanlarda kullanılır.
+
+## 🧩 6. ListView İçinde Farklı Widget’lar
+
+ListView sadece Text veya ListTile değil, her türlü widget’ı içerebilir.
+```dart
+ListView(
+  padding: const EdgeInsets.all(8),
+  children: [
+    const Text("Başlık", style: TextStyle(fontSize: 24)),
+    Image.network("https://picsum.photos/200/300"),
+    const SizedBox(height: 10),
+    ElevatedButton(
+      onPressed: () {},
+      child: const Text("Tıkla"),
+    ),
+  ],
+)
+```
+## 🧮 7. ListView + Card Kullanımı
+
+Card widget’ı ile daha güzel görünümler elde edebilirsin.
+```dart
+ListView.builder(
+  itemCount: 5,
+  itemBuilder: (context, index) {
+    return Card(
+      color: Colors.blue[50],
+      margin: const EdgeInsets.all(8),
+      child: ListTile(
+        leading: const Icon(Icons.person),
+        title: Text("Kullanıcı $index"),
+        subtitle: const Text("Detay bilgisi"),
+        trailing: const Icon(Icons.arrow_forward_ios),
+      ),
+    );
+  },
+)
+```
+## 🧱 8. ListView İçinde Scroll Sorunu (Nested List)
+
+Bir ListView başka bir ListView içinde kullanılacaksa şu özellik zorunludur:
+```dart
+ListView(
+  shrinkWrap: true,
+  physics: const NeverScrollableScrollPhysics(),
+  children: [
+    // Alt listeler buraya
+  ],
+)
+```
 
 
+🧠 Açıklama:
+
+shrinkWrap: true → Liste, içeriği kadar yer kaplar.
+
+NeverScrollableScrollPhysics() → Kaydırma devre dışı olur (üstteki liste kaydırmayı kontrol eder).
+
+## 🧩 9. Ekstra: ListView.custom
+
+Kendi özel yapılandırmanı tanımlamak istersen ListView.custom kullanabilirsin.
+Ancak çoğu durumda builder veya separated yeterlidir.
 
 
+📘 Özet
 
-
-
-
-
-
-
-
-
+| Kullanım             | Açıklama                               |
+| -------------------- | -------------------------------------- |
+| `ListView`           | Basit liste, tüm elemanlar oluşturulur |
+| `ListView.builder`   | Dinamik ve performanslı liste          |
+| `ListView.separated` | Araya ayırıcı (Divider) ekler          |
+| `ListView.custom`    | Özel yapılar için                      |
+| `scrollDirection`    | Dikey/Yatay liste ayarı                |
 
 
 
