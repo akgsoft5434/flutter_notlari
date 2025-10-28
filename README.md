@@ -4,7 +4,7 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 
 ## 🚀 Konular
 
-- [Listeler](./listeler.md)
+- [Listeler](./collections.md)
 - [Fonksiyonlar](./fonksiyonlar.md)
 - [Set Yapısı](./setler.md)
 - [Map Yapısı](./mapler.md)
