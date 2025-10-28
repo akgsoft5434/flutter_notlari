@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
+```
 
 
 ### 🟢 Açıklama:
@@ -55,3 +55,72 @@ Liste kaydırılabilir (scrollable) olur.
 ## 🔁 3. ListView.builder ile Dinamik Liste
 
 Eğer listenin eleman sayısı fazla veya veri bir diziden geliyorsa, ListView.builder kullanmak çok daha verimlidir.
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    List<String> meyveler = ["Elma", "Muz", "Karpuz", "Kiraz", "Çilek", "Kavun"];
+
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text("ListView.builder Kullanımı")),
+        body: ListView.builder(
+          itemCount: meyveler.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: const Icon(Icons.local_florist),
+              title: Text(meyveler[index]),
+              subtitle: Text("Sıra: $index"),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
