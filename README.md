@@ -3,6 +3,7 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 ## 📂 Collections
 
 - [Listeler](collections/list.md)
+- [List Fabrika Yapıları](collections/listfactory.md)
 - [Set Yapısı](collections/sets.md)
 - [Map Yapısı](collections/maps.md)
   
