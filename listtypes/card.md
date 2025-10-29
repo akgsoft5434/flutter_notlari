@@ -48,7 +48,7 @@ Card(
     child: Text('Merhaba Flutter!'),
   ),
 )
-</div> <div> <img src="assets/card_output.png" alt="Card widget çıktısı" width="300"> </div> </div> ```
+</div> <div> <img src="assets/Screenshot_20251029_035610.png" alt="Card widget çıktısı" width="300"> </div> </div> 
 }
 ```
 
