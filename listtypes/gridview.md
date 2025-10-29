@@ -1,20 +1,20 @@
 # 📱 Flutter GridView Kullanımı
 
-GridView, Flutter’da öğeleri (örneğin resimler, kartlar, butonlar vb.) ızgara (grid) şeklinde göstermek için kullanılır.
+`GridView`, Flutter’da öğeleri (örneğin resimler, kartlar, butonlar vb.) ızgara (grid) şeklinde göstermek için kullanılır.
 Yani ListView’in kare veya dikdörtgen hücrelerden oluşan versiyonu gibidir.
 
-##🔹 1. GridView Nedir?
+## 🔹 1. GridView Nedir?
 
-GridView, çoklu öğeleri satır ve sütunlara bölerek gösterir.
+`GridView`, çoklu öğeleri satır ve sütunlara bölerek gösterir.
 Flutter'da birkaç temel kullanım şekli vardır:
 
-GridView.count
+`GridView.count`
 
-GridView.builder
+`GridView.builder`
 
-GridView.extent
+`GridView.extent`
 
-GridView.custom
+`GridView.custom`
 
 ##🔹 2. GridView.count Kullanımı
 
