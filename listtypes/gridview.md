@@ -16,7 +16,7 @@ Flutter'da birkaç temel kullanım şekli vardır:
 
 `GridView.custom`
 
-##🔹 2. GridView.count Kullanımı
+## 🔹 2. GridView.count Kullanımı
 
 En basit ve en çok kullanılan yöntemdir.
 Sabit sütun sayısı belirterek Grid oluşturur.
