@@ -6,6 +6,42 @@ Bu fonksiyon sayesinde **AlertDialog**, **basit Text**, veya kendi özel widget�
 
 ---
 
+## 🧩 Basit showDialog Örneği
+
+```dart
+import 'package:flutter/material.dart';
+
+class ShowDialogKullanimi extends StatelessWidget {
+  const ShowDialogKullanimi({super.key});
+
+  void _showDialogOrnek1(BuildContext myContext) {
+    showDialog(
+      context: myContext,
+      builder: (context) {
+        return Text("Selam!");
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Basit showDialog Örneği'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () => _showDialogOrnek1(context),
+          child: const Text('Dialog Göster'),
+        ),
+      ),
+    );
+  }
+}
+```
+
+
 ## 🧩 Basit AlertDialog Örneği
 
 ```dart
