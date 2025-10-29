@@ -158,6 +158,7 @@ class EmojiListApp extends StatelessWidget {
   }
 }
 ```
+<img src="../assets/Screenshot_20251029_044118.png" width="250"> 
 
 ## 🔁 3. ListView.builder ile Dinamik Liste
 
