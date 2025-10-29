@@ -36,7 +36,6 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
-| <img src="../assets/Screenshot_20251029_035610.png" width="300"> |
 
 🧩 Açıklama:
 
@@ -109,7 +108,10 @@ RoundedRectangleBorder ile köşeleri yumuşatabilirsin.
 
 
 🧩 Birden Fazla Kart Listeleme (ListView ile)
-```dart
+
+| Kod | Çıktı |
+|------|-------|
+| ```dart
 import 'package:flutter/material.dart';
 
 class KartListesi extends StatelessWidget {
@@ -143,7 +145,7 @@ class KartListesi extends StatelessWidget {
     );
   }
 }
-```
+``` | <img src="assets/Screenshot_20251029_035610.png" width="250"> |
 
 
 🧾 Açıklama:
