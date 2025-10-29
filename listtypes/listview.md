@@ -52,6 +52,113 @@ ListView widget'ı children parametresiyle bir widget listesi alır.
 
 Liste kaydırılabilir (scrollable) olur.
 
+Örnek (Genişletilmiş Hali)
+
+## 🍇 Flutter — Sebze ve Meyve Emojili Liste Örneği
+
+Aşağıdaki örnek, 50 farklı meyve ve sebzeyi emoji ile birlikte gösteren bir `ListView.builder` uygulamasıdır.  
+Liste elemanları dinamik olarak `List<String>` içinden oluşturulur.  
+
+---
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const EmojiListApp());
+}
+
+class EmojiListApp extends StatelessWidget {
+  const EmojiListApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final List<String> sebzeMeyveler = [
+      "🍎 Elma",
+      "🍏 Yeşil Elma",
+      "🍐 Armut",
+      "🍊 Portakal",
+      "🍋 Limon",
+      "🍌 Muz",
+      "🍉 Karpuz",
+      "🍇 Üzüm",
+      "🍓 Çilek",
+      "🍈 Kavun",
+      "🍒 Kiraz",
+      "🍑 Şeftali",
+      "🥭 Mango",
+      "🍍 Ananas",
+      "🥥 Hindistan Cevizi",
+      "🥝 Kivi",
+      "🍅 Domates",
+      "🍆 Patlıcan",
+      "🥑 Avokado",
+      "🥦 Brokoli",
+      "🥬 Marul",
+      "🥒 Salatalık",
+      "🌽 Mısır",
+      "🥕 Havuç",
+      "🧄 Sarımsak",
+      "🧅 Soğan",
+      "🥔 Patates",
+      "🍠 Tatlı Patates",
+      "🍄 Mantar",
+      "🥜 Fıstık",
+      "🌰 Kestane",
+      "🍞 Ekmek",
+      "🫐 Yaban Mersini",
+      "🍋 Limon Dilimi",
+      "🍍 Ananas Dilimi",
+      "🍈 Kavun Dilimi",
+      "🥥 Cevizli Tatlı",
+      "🍇 Siyah Üzüm",
+      "🍉 Mini Karpuz",
+      "🍒 Tatlı Kiraz",
+      "🍎 Kırmızı Elma",
+      "🍓 Dağ Çileği",
+      "🥭 Tropikal Mango",
+      "🍑 Kayısı",
+      "🥬 Roka",
+      "🌶️ Biber",
+      "🫑 Dolmalık Biber",
+      "🧄 Taze Sarımsak",
+      "🥦 Mini Brokoli",
+      "🍆 Mor Patlıcan",
+      "🥕 Bebek Havuç",
+    ];
+
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("🥕 Sebze & Meyve Listesi"),
+          backgroundColor: Colors.green,
+        ),
+        body: ListView.builder(
+          itemCount: sebzeMeyveler.length,
+          itemBuilder: (context, index) {
+            final item = sebzeMeyveler[index];
+            final parts = item.split(" ");
+            final emoji = parts[0];
+            final name = parts.sublist(1).join(" ");
+            return ListTile(
+              leading: Text(
+                emoji,
+                style: const TextStyle(fontSize: 28),
+              ),
+              title: Text(
+                name,
+                style: const TextStyle(fontSize: 18),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+```
+
 ## 🔁 3. ListView.builder ile Dinamik Liste
 
 Eğer listenin eleman sayısı fazla veya veri bir diziden geliyorsa, ListView.builder kullanmak çok daha verimlidir.
