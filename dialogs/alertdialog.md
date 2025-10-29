@@ -157,10 +157,33 @@ if (sonuc == true) {
 }
 ```
 
+🧾 Özet
 
+| Özellik      | Açıklama                                                     |
+| ------------ | ------------------------------------------------------------ |
+| Kullanımı    | `showDialog` fonksiyonu ile açılır.                          |
+| Yapısı       | `AlertDialog` widget’ı ile oluşturulur.                      |
+| Kapanma      | `Navigator.pop(context)` ile kapatılır.                      |
+| Özelleştirme | İçerik, buton, renk, şekil gibi özellikler değiştirilebilir. |
 
+🚀 Ekstra: Cupertino Tarzı (iOS Görünümü)
+```dart
+import 'package:flutter/cupertino.dart';
 
-
+showCupertinoDialog(
+  context: context,
+  builder: (_) => CupertinoAlertDialog(
+    title: const Text('Uyarı'),
+    content: const Text('iOS tarzı bir diyalog örneği.'),
+    actions: [
+      CupertinoDialogAction(
+        child: const Text('Tamam'),
+        onPressed: () => Navigator.pop(context),
+      ),
+    ],
+  ),
+);
+```
 
 
 
