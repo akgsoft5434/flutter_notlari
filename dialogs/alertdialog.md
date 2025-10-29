@@ -206,6 +206,11 @@ class ShowDialogKullanimi extends StatelessWidget {
 }
 
 ```
+
+ <img src="../assets/Screenshot_20251029_175350.png" width="250"> 
+
+
+ 
 🧱 Özel Tasarımlı AlertDialog
 
 `AlertDialog` içinde her tür widget kullanılabilir:
