@@ -37,6 +37,20 @@ class MyApp extends StatelessWidget {
 }
 ```
 
+<div style="display: flex; align-items: flex-start; gap: 20px;">
+
+<div>
+
+```dart
+Card(
+  child: Padding(
+    padding: EdgeInsets.all(16),
+    child: Text('Merhaba Flutter!'),
+  ),
+)
+</div> <div> <img src="assets/card_output.png" alt="Card widget çıktısı" width="300"> </div> </div> ```
+
+
 🧩 Açıklama:
 
 Card: Temel widget’tır. İçine genellikle Column, Row, ListTile gibi widget’lar yerleştirilir.
