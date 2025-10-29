@@ -84,7 +84,15 @@ ListTile(
 )
 ```
 
-------------------------------------------------------------------------
+🧠 Burada Ne Oldu?
+
+CircleAvatar ile profil resmi eklendi.
+
+trailing kısmına IconButton eklenerek mesaj gönderme butonu oluşturuldu.
+
+onTap ile satır tıklanınca tepki veriyor.
+
+
 
 ## 🧩 Birden Fazla `ListTile` Kullanımı
 
