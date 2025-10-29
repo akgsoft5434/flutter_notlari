@@ -66,6 +66,9 @@ class SimpleDialogExample extends StatelessWidget {
 }
 
 ```
+
+ <img src="../assets/Screenshot_20251029_174040.png" width="250"> 
+ 
 🧠 Açıklama:
 
 ElevatedButton’a tıkladığında _showSimpleTextDialog fonksiyonu çalışır.
@@ -102,7 +105,9 @@ void _showMyDialog(BuildContext context) {
   );
 }
 ```
+ <img src="../assets/Screenshot_20251029_174000.png" width="250"> 
 
+ 
 # 📱 Flutter AlertDialog Kullanımı
 
 ## 🔍 AlertDialog Nedir?
