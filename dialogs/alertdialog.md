@@ -103,6 +103,85 @@ void _showConfirmDialog(BuildContext context) {
   );
 }
 ```
+🧱 Özel Tasarımlı AlertDialog
+
+`AlertDialog` içinde her tür widget kullanılabilir:
+
+```dart
+AlertDialog(
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(20),
+  ),
+  title: const Text('Giriş Yap'),
+  content: Column(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      TextField(decoration: InputDecoration(labelText: 'Kullanıcı Adı')),
+      TextField(decoration: InputDecoration(labelText: 'Şifre')),
+    ],
+  ),
+  actions: [
+    TextButton(onPressed: () => Navigator.pop(context), child: const Text('İptal')),
+    ElevatedButton(onPressed: () {}, child: const Text('Giriş')),
+  ],
+);
+```
+
+🧠 İpucu
+
+`showDialog` asenkron çalışır. `await` ile kullanıcı cevabını bekleyebilirsin:
+
+```dart
+bool? sonuc = await showDialog<bool>(
+  context: context,
+  builder: (_) => AlertDialog(
+    title: const Text('Onay'),
+    content: const Text('Devam etmek istiyor musunuz?'),
+    actions: [
+      TextButton(
+        onPressed: () => Navigator.pop(context, false),
+        child: const Text('Hayır'),
+      ),
+      TextButton(
+        onPressed: () => Navigator.pop(context, true),
+        child: const Text('Evet'),
+      ),
+    ],
+  ),
+);
+
+if (sonuc == true) {
+  print('Kullanıcı onayladı.');
+} else {
+  print('Kullanıcı iptal etti.');
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
