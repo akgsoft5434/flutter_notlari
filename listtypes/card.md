@@ -36,18 +36,7 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
-
-| Kod | Çıktı |
-|------|-------|
-| ```dart
-Card(
-  child: Padding(
-    padding: EdgeInsets.all(16),
-    child: Text('Merhaba Flutter!'),
-  ),
-)
-``` | <img src="assets/Screenshot_20251029_035610.png" width="250"> |
-
+| <img src="assets/card_listtile_output.png" width="300"> |
 
 🧩 Açıklama:
 
