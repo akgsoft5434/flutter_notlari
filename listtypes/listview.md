@@ -142,23 +142,13 @@ class Ogrenci {
 
 ### 🔍 Kodun Açıklaması
 
-#### 1️⃣ `import 'package:flutter/material.dart';`
 
-Material widget’ları kullanabilmek için gerekli kütüphane.
 
-### 2️⃣ `void main()`
-
-Uygulamanın başlangıç noktası. `runApp(MyApp())` ile `MyApp` başlatılır.
-
-### 3️⃣ `class MyApp extends StatelessWidget`
-
-Uygulamanın temel arayüzünü oluşturur. StatelessWidget olduğundan veriler değişmez.
-
-### 4️⃣ `List<Ogrenci> tumOgrenciler = List.generate(...)`
+#### 1. `List<Ogrenci> tumOgrenciler = List.generate(...)`
 
 500 öğrenciyi dinamik olarak oluşturur. Her öğrencinin id, ad ve soyadı atanır.
 
-### 5️⃣ `Ogrenci` sınıfı
+#### 2. `Ogrenci` sınıfı
 
 Her öğrenciyi temsil eden model sınıfı:
 
@@ -166,19 +156,15 @@ Her öğrenciyi temsil eden model sınıfı:
 * `adi`: Öğrenci adı
 * `soyadi`: Öğrenci soyadı
 
-### 6️⃣ `MaterialApp` ve `Scaffold`
-
-Uygulamanın iskeletini oluşturur. Scaffold içinde AppBar, Body gibi alanlar yer alır.
-
-### 7️⃣ `ListView`
+#### 3. `ListView`
 
 Listeyi dikey olarak göstermek için kullanılır.
 
-### 8️⃣ `.map()`
+#### 4. `.map()`
 
 Her öğrenci nesnesini bir `Card` ve `ListTile` widget’ına dönüştürür.
 
-### 9️⃣ `Card + ListTile`
+#### 5. `Card + ListTile`
 
 * **Card**: Öğrenci bilgilerini kutu içinde gösterir
 * **ListTile**: Kartın içeriğini başlık, alt başlık ve avatar ile düzenler
