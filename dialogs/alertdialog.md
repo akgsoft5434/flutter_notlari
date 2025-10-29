@@ -6,7 +6,7 @@ Bu fonksiyon sayesinde **AlertDialog**, **basit Text**, veya kendi özel widget�
 
 ---
 
-## 🧩 Basit showDialog Örneği
+🧩 Basit showDialog Örneği
 
 ```dart
 import 'package:flutter/material.dart';
@@ -31,10 +31,10 @@ class SimpleDialogExample extends StatelessWidget {
   const SimpleDialogExample({super.key});
 
   // Basit bir metin dialogu gösteren fonksiyon
-  void _showSimpleTextDialog(BuildContext context) {
+  void _showSimpleTextDialog(BuildContext myContext) {
     showDialog(
-      context: context,
-      builder: (BuildContext context) {
+      context: myContext,
+      builder: (myContext) {
         return const Center(
           child: Text(
             'Merhaba!',
