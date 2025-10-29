@@ -46,15 +46,17 @@ class MyApp extends StatelessWidget {
 ```
 <img src="../assets/Screenshot_20251029_041334.png" width="250"> 
 
-### 📘 Açıklama:
+📘 Açıklama:
+
+ListView widget'ı children parametresiyle bir widget listesi alır.
+Liste kaydırılabilir (scrollable) olur.
+
 
 Buradaki elma, muz, kiraz gibi semboller Unicode emoji karakterleridir.
-
 Flutter metinlerde (Text widget’ında) Unicode desteği vardır, bu yüzden direkt görünür.
-
 Kopyala-yapıştır yöntemiyle kullanabilirsin (örn: emojipedia.org)
 
-### 🔢 Ek Bilgi: Emoji Kodlarını Kullanmak (Unicode)
+🔢 Ek Bilgi: Emoji Kodlarını Kullanmak (Unicode)
 
 Eğer emoji karakterini direkt yazmak istemiyorsan, Unicode koduyla da yazabilirsin 👇
 
@@ -65,9 +67,7 @@ const Text('\u{1F34E} Elma') // 🍎
 ```
 ### 🟢 Açıklama:
 
-ListView widget'ı children parametresiyle bir widget listesi alır.
 
-Liste kaydırılabilir (scrollable) olur.
 
 ## 🔁 3. ListView.builder ile Dinamik Liste
 
@@ -206,6 +206,8 @@ ListView.separated(
   },
 )
 ```
+<img src="../assets/Screenshot_20251029_045359.png" width="250"> 
+
 
 📘 Kullanım Amacı:
 Liste öğeleri arasında çizgi veya boşluk eklemek.
