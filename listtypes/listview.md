@@ -194,6 +194,8 @@ ListView.builder(
 
 > Sadece ekranda görünen öğeleri oluşturur, binlerce eleman için daha hızlıdır.
 
+<img src="../assets/Screenshot_20251029_052402.png" width="250"> 
+
 ---
 
 ## 💡 Notlar
