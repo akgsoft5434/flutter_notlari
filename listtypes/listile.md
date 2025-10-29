@@ -50,36 +50,18 @@ class MyApp extends StatelessWidget {
 
 ## 🧱 Özellikler (Properties)
 
-  --------------------------------------------------------------------------------------------------
-  Özellik                  Açıklama                   Örnek
-  ------------------------ -------------------------- ----------------------------------------------
-  `leading`                Sol kısma ikon veya görsel `leading: Icon(Icons.person)`
-                           ekler                      
+| Özellik          | Açıklama                                            | Örnek                                        |
+| ---------------- | --------------------------------------------------- | -------------------------------------------- |
+| `leading`        | Sol kısma ikon veya görsel ekler                    | `leading: Icon(Icons.person)`                |
+| `title`          | Ana başlık metni                                    | `title: Text('Flutter')`                     |
+| `subtitle`       | Alt başlık metni                                    | `subtitle: Text('Mobil Geliştirme')`         |
+| `trailing`       | Sağ kısma ikon, switch, buton gibi bir widget ekler | `trailing: Icon(Icons.more_vert)`            |
+| `isThreeLine`    | Kartın üç satır olması gerektiğini belirtir         | `isThreeLine: true`                          |
+| `dense`          | Daha sıkı bir görünüm sağlar                        | `dense: true`                                |
+| `contentPadding` | İç boşlukları ayarlar                               | `contentPadding: EdgeInsets.all(8)`          |
+| `onTap`          | Satıra tıklanınca çalışacak olay                    | `onTap: () { print('Tıklandı'); }`           |
+| `onLongPress`    | Uzun basılınca çalışacak olay                       | `onLongPress: () { print('Uzun basıldı'); }` |
 
-  `title`                  Ana başlık metni           `title: Text('Flutter')`
-
-  `subtitle`               Alt başlık metni           `subtitle: Text('Mobil Geliştirme')`
-
-  `trailing`               Sağ kısma ikon, switch,    `trailing: Icon(Icons.more_vert)`
-                           buton gibi bir widget      
-                           ekler                      
-
-  `isThreeLine`            Kartın üç satır olması     `isThreeLine: true`
-                           gerektiğini belirtir       
-
-  `dense`                  Daha sıkı bir görünüm      `dense: true`
-                           sağlar                     
-
-  `contentPadding`         İç boşlukları ayarlar      `contentPadding: EdgeInsets.all(8)`
-
-  `onTap`                  Satıra tıklanınca          `onTap: () { print('Tıklandı'); }`
-                           çalışacak olay             
-
-  `onLongPress`            Uzun basılınca çalışacak   `onLongPress: () { print('Uzun basıldı'); }`
-                           olay                       
-  --------------------------------------------------------------------------------------------------
-
-------------------------------------------------------------------------
 
 ## 💡 Örnek: Temel Profil Kartı
 
