@@ -37,20 +37,17 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-<div style="display: flex; align-items: flex-start; gap: 20px;">
-
-<div>
-
-```dart
+| Kod | Çıktı |
+|------|-------|
+| ```dart
 Card(
   child: Padding(
     padding: EdgeInsets.all(16),
     child: Text('Merhaba Flutter!'),
   ),
 )
-</div> <div> <img src="assets/Screenshot_20251029_035610.png" alt="Card widget çıktısı" width="300"> </div> </div> 
-}
-```
+``` | <img src="assets/Screenshot_20251029_035610.png" width="250"> |
+
 
 🧩 Açıklama:
 
