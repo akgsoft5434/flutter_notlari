@@ -49,7 +49,8 @@ Card(
   ),
 )
 </div> <div> <img src="assets/card_output.png" alt="Card widget çıktısı" width="300"> </div> </div> ```
-
+}
+```
 
 🧩 Açıklama:
 
