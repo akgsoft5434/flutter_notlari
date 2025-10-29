@@ -67,6 +67,154 @@ const Text('\u{1F34E} Elma') // 🍎
 ```
 ### 🟢 Açıklama:
 
+## 📘 Örnek: Flutter Dinamik Öğrenci Listesi
+
+Bu örnek, **500 öğrenciden oluşan bir listeyi** Flutter’da **Card + ListTile** ile ekranda göstermeyi amaçlar.
+Her öğrenciye ait **id, ad ve soyad bilgisi** bir listeye eklenir ve bu bilgiler ListView içinde listelenir.
+
+---
+
+### 🧩 Amaç
+
+* Flutter’da **dinamik veri listesi** oluşturmayı öğrenmek.
+* **Model sınıfı (Ogrenci)** tanımlayarak veriyi yönetmeyi görmek.
+* **ListView**, **Card**, **ListTile** ve **CircleAvatar** widget’larını birlikte kullanmayı öğrenmek.
+
+---
+
+### 📜 Kod
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  MyApp({super.key});
+
+  // 500 öğrenci oluşturuluyor
+  List<Ogrenci> tumOgrenciler = List.generate(
+    500,
+    (index) => Ogrenci(
+      index + 1,
+      "Öğrenci Adı ${index + 1}",
+      "Öğrenci Soyadı ${index + 1}",
+    ),
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: ListView(
+          children: tumOgrenciler
+              .map(
+                (Ogrenci ogr) => Card(
+                  child: ListTile(
+                    title: Text(ogr.adi),
+                    subtitle: Text(ogr.soyadi),
+                    leading: CircleAvatar(
+                      child: Text(ogr.id.toString()),
+                      backgroundColor: Colors.teal,
+                    ),
+                  ),
+                ),
+              )
+              .toList(),
+        ),
+      ),
+    );
+  }
+}
+
+class Ogrenci {
+  final int id;
+  final String adi;
+  final String soyadi;
+
+  Ogrenci(this.id, this.adi, this.soyadi);
+}
+```
+
+---
+
+### 🔍 Kodun Açıklaması
+
+#### 1️⃣ `import 'package:flutter/material.dart';`
+
+Material widget’ları kullanabilmek için gerekli kütüphane.
+
+### 2️⃣ `void main()`
+
+Uygulamanın başlangıç noktası. `runApp(MyApp())` ile `MyApp` başlatılır.
+
+### 3️⃣ `class MyApp extends StatelessWidget`
+
+Uygulamanın temel arayüzünü oluşturur. StatelessWidget olduğundan veriler değişmez.
+
+### 4️⃣ `List<Ogrenci> tumOgrenciler = List.generate(...)`
+
+500 öğrenciyi dinamik olarak oluşturur. Her öğrencinin id, ad ve soyadı atanır.
+
+### 5️⃣ `Ogrenci` sınıfı
+
+Her öğrenciyi temsil eden model sınıfı:
+
+* `id`: Öğrenci numarası
+* `adi`: Öğrenci adı
+* `soyadi`: Öğrenci soyadı
+
+### 6️⃣ `MaterialApp` ve `Scaffold`
+
+Uygulamanın iskeletini oluşturur. Scaffold içinde AppBar, Body gibi alanlar yer alır.
+
+### 7️⃣ `ListView`
+
+Listeyi dikey olarak göstermek için kullanılır.
+
+### 8️⃣ `.map()`
+
+Her öğrenci nesnesini bir `Card` ve `ListTile` widget’ına dönüştürür.
+
+### 9️⃣ `Card + ListTile`
+
+* **Card**: Öğrenci bilgilerini kutu içinde gösterir
+* **ListTile**: Kartın içeriğini başlık, alt başlık ve avatar ile düzenler
+* **CircleAvatar**: Sol tarafta öğrencinin id’sini daire içinde gösterir
+
+---
+
+## ⚙️ Alternatif Performanslı Liste
+
+```dart
+ListView.builder(
+  itemCount: tumOgrenciler.length,
+  itemBuilder: (context, index) {
+    var ogr = tumOgrenciler[index];
+    return Card(
+      child: ListTile(
+        title: Text(ogr.adi),
+        subtitle: Text(ogr.soyadi),
+        leading: CircleAvatar(
+          child: Text(ogr.id.toString()),
+        ),
+      ),
+    );
+  },
+);
+```
+
+> Sadece ekranda görünen öğeleri oluşturur, binlerce eleman için daha hızlıdır.
+
+---
+
+## 💡 Notlar
+
+* `ListView` ile uzun listeler gösterebilirsin.
+* `Card` + `ListTile` kombinasyonu, **profesyonel görünümlü listeler** oluşturmak için idealdir.
+* `CircleAvatar` ile profil veya kısa bilgi gösterebilirsin.
 
 
 ## 🔁 3. ListView.builder ile Dinamik Liste
