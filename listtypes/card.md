@@ -112,7 +112,6 @@ RoundedRectangleBorder ile köşeleri yumuşatabilirsin.
 | Kod | Çıktı |
 |------|-------|
 | 
-```dart
 import 'package:flutter/material.dart';
 
 class KartListesi extends StatelessWidget {
@@ -146,7 +145,7 @@ class KartListesi extends StatelessWidget {
     );
   }
 }
-```
+
  | <img src="assets/Screenshot_20251029_035610.png" width="250"> |
 
 
