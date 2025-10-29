@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
-| <img src="assets/Screenshot_20251029_035610.png" width="300"> |
+| <img src="../assets/Screenshot_20251029_035610.png" width="300"> |
 
 🧩 Açıklama:
 
