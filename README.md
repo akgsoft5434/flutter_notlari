@@ -10,4 +10,5 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
   
 ## 📂 ListView
 
+- [Card Nesnesi](listtypes/card.md)
 - [Card Nesnesi](listtypes/listview.md)
