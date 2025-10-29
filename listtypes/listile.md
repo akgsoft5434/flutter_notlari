@@ -1,14 +1,17 @@
-# 📋 Flutter `ListTile` Widget — Detaylı Anlatım
+# 📋 Flutter `ListTile` Widget --- Detaylı Anlatım
 
 ## 🎯 Amaç
-`ListTile`, Flutter’da **tek bir satırda bilgi sunmak** için kullanılan, oldukça yaygın ve pratik bir widget’tır.  
-Genellikle listelerde (`ListView`) kullanılır ve satır yapısında **başlık, alt başlık, simge veya buton** gibi bileşenler içerir.
 
----
+`ListTile`, Flutter'da **tek bir satırda bilgi sunmak** için kullanılan,
+oldukça yaygın ve pratik bir widget'tır.\
+Genellikle listelerde (`ListView`) kullanılır ve satır yapısında
+**başlık, alt başlık, simge veya buton** gibi bileşenler içerir.
+
+------------------------------------------------------------------------
 
 ## 🧱 Temel Kullanım
 
-```dart
+``` dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,33 +38,52 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-🧩 Açıklama
+### 🧩 Açıklama
 
-leading → Sol tarafa yerleştirilen ikon, resim veya avatar.
+-   **`leading`** → Sol tarafa yerleştirilen ikon, resim veya avatar.\
+-   **`title`** → Ana başlık kısmıdır.\
+-   **`subtitle`** → Alt başlık veya açıklama kısmıdır.\
+-   **`trailing`** → Sağ tarafa eklenen ikon, buton veya başka bir
+    widget'tır.
 
-title → Ana başlık kısmıdır.
+------------------------------------------------------------------------
 
-subtitle → Alt başlık veya açıklama kısmıdır.
+## 🧱 Özellikler (Properties)
 
-trailing → Sağ tarafa eklenen ikon, buton veya başka bir widget’tır.
+  --------------------------------------------------------------------------------------------------
+  Özellik                  Açıklama                   Örnek
+  ------------------------ -------------------------- ----------------------------------------------
+  `leading`                Sol kısma ikon veya görsel `leading: Icon(Icons.person)`
+                           ekler                      
 
-🧱 Özellikler (Properties)
+  `title`                  Ana başlık metni           `title: Text('Flutter')`
 
-| Özellik          | Açıklama                                            | Örnek                                        |
-| ---------------- | --------------------------------------------------- | -------------------------------------------- |
-| `leading`        | Sol kısma ikon veya görsel ekler                    | `leading: Icon(Icons.person)`                |
-| `title`          | Ana başlık metni                                    | `title: Text('Flutter')`                     |
-| `subtitle`       | Alt başlık metni                                    | `subtitle: Text('Mobil Geliştirme')`         |
-| `trailing`       | Sağ kısma ikon, switch, buton gibi bir widget ekler | `trailing: Icon(Icons.more_vert)`            |
-| `isThreeLine`    | Kartın üç satır olması gerektiğini belirtir         | `isThreeLine: true`                          |
-| `dense`          | Daha sıkı bir görünüm sağlar                        | `dense: true`                                |
-| `contentPadding` | İç boşlukları ayarlar                               | `contentPadding: EdgeInsets.all(8)`          |
-| `onTap`          | Satıra tıklanınca çalışacak olay                    | `onTap: () { print('Tıklandı'); }`           |
-| `onLongPress`    | Uzun basılınca çalışacak olay                       | `onLongPress: () { print('Uzun basıldı'); }` |
+  `subtitle`               Alt başlık metni           `subtitle: Text('Mobil Geliştirme')`
 
+  `trailing`               Sağ kısma ikon, switch,    `trailing: Icon(Icons.more_vert)`
+                           buton gibi bir widget      
+                           ekler                      
 
-💡 Örnek: Temel Profil Kartı
+  `isThreeLine`            Kartın üç satır olması     `isThreeLine: true`
+                           gerektiğini belirtir       
 
+  `dense`                  Daha sıkı bir görünüm      `dense: true`
+                           sağlar                     
+
+  `contentPadding`         İç boşlukları ayarlar      `contentPadding: EdgeInsets.all(8)`
+
+  `onTap`                  Satıra tıklanınca          `onTap: () { print('Tıklandı'); }`
+                           çalışacak olay             
+
+  `onLongPress`            Uzun basılınca çalışacak   `onLongPress: () { print('Uzun basıldı'); }`
+                           olay                       
+  --------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+## 💡 Örnek: Temel Profil Kartı
+
+``` dart
 ListTile(
   leading: const CircleAvatar(
     backgroundImage: AssetImage('assets/avatar.png'),
@@ -78,19 +100,13 @@ ListTile(
     debugPrint('Kart tıklandı');
   },
 )
+```
 
+------------------------------------------------------------------------
 
-🧠 Burada Ne Oldu?
+## 🧩 Birden Fazla `ListTile` Kullanımı
 
-CircleAvatar ile profil resmi eklendi.
-
-trailing kısmına IconButton eklenerek mesaj gönderme butonu oluşturuldu.
-
-onTap ile satır tıklanınca tepki veriyor.
-
-🧩 Birden Fazla ListTile Kullanımı
-
-
+``` dart
 import 'package:flutter/material.dart';
 
 class KisilerSayfasi extends StatelessWidget {
@@ -125,18 +141,13 @@ class KisilerSayfasi extends StatelessWidget {
     );
   }
 }
+```
 
+------------------------------------------------------------------------
 
-🧾 Açıklama:
+## 🧩 Dinamik `ListTile` Oluşturma
 
-ListView ile birden fazla ListTile art arda sıralandı.
-
-Divider() satır aralarına ince çizgi eklemek için kullanıldı.
-
-🧠 Dinamik ListTile Oluşturma (ListView.builder)
-
-
-
+``` dart
 final kisiler = [
   {'isim': 'Ayşe', 'meslek': 'Hemşire'},
   {'isim': 'Can', 'meslek': 'Pilot'},
@@ -158,95 +169,14 @@ ListView.builder(
     );
   },
 )
+```
 
+------------------------------------------------------------------------
 
+## 🚀 Sonuç
 
-🎓 Burada Ne Öğrendik?
-
-ListView.builder ile dinamik olarak veriden ListTile üretildi.
-
-Bu yöntem, özellikle veritabanından gelen veya API’den çekilen listeler için idealdir.
-
-✨ Özel Tasarımlı ListTile
-
-
-Card(
-  margin: const EdgeInsets.all(10),
-  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-  elevation: 5,
-  child: ListTile(
-    leading: const Icon(Icons.book, color: Colors.deepPurple),
-    title: const Text(
-      'Flutter Rehberi',
-      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-    ),
-    subtitle: const Text('Mobil uygulama geliştirmeye giriş'),
-    trailing: const Icon(Icons.star, color: Colors.amber),
-    tileColor: Colors.deepPurple[50],
-    onTap: () => debugPrint('Kitap seçildi'),
-  ),
-)
-
-
-
-🧱 Ekstra Özellikler:
-
-
-| Özellik             | Açıklama                                  |
-| ------------------- | ----------------------------------------- |
-| `tileColor`         | Arka plan rengini ayarlar                 |
-| `selected`          | Satırın seçili olup olmadığını belirtir   |
-| `selectedColor`     | Seçili durumdaki yazı rengini belirler    |
-| `selectedTileColor` | Seçili satırın arka plan rengini belirler |
-
-
-
-
-🧩 Seçilebilir ListTile (örnek)
-
-
-bool secili = false;
-
-ListTile(
-  title: const Text('Flutter Dersi'),
-  trailing: Icon(
-    secili ? Icons.check_box : Icons.check_box_outline_blank,
-    color: Colors.blue,
-  ),
-  onTap: () {
-    secili = !secili;
-    debugPrint('Durum: $secili');
-  },
-)
-
-
-
-Bu yapı genellikle ayarlar menüsü, yapılacaklar listesi gibi durumlarda kullanılır.
-
-💬 İpucu
-
-ListTile basit liste görünümü için idealdir, ancak çok karmaşık yapılarda Row, Column veya özel widget kombinasyonları daha uygun olabilir.
-
-Görsel olarak Card ile birlikte kullanımı, profesyonel bir görünüm sağlar.
-
-ListTile ayrıca Radio, Checkbox, Switch gibi bileşenlerle de rahatlıkla entegre edilebilir.
-
-🧾 Özet
-
-
-| Konu                      | Açıklama                                                 |
-| ------------------------- | -------------------------------------------------------- |
-| **Amacı**                 | Liste biçiminde satır yapısı oluşturmak                  |
-| **Yaygın Kullanım Alanı** | Profil listesi, ayarlar menüsü, kişi listesi             |
-| **Önemli Özellikler**     | `leading`, `title`, `subtitle`, `trailing`               |
-| **Tıklanabilirlik**       | `onTap` ve `onLongPress`                                 |
-| **Ekstra**                | `isThreeLine`, `dense`, `tileColor`, `selectedTileColor` |
-
-
-
-🚀 Sonuç
-
-ListTile, Flutter’da en çok kullanılan yapı taşlarından biridir.
-Basit ama güçlü bir yapıya sahip olduğu için menü listeleri, kişi bilgileri, ayar sayfaları gibi birçok senaryoda tercih edilir.
-
-Birçok widget ile uyumlu çalışarak uygulamanı hem kullanışlı hem de estetik hale getirir.
+`ListTile`, Flutter'da **liste biçimli satırlar** oluşturmak için
+kullanılan sade ama güçlü bir widget'tır.\
+**Profil listeleri, ayarlar menüleri ve kişi listeleri** gibi birçok
+yerde kullanılır.\
+---
