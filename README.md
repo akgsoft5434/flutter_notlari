@@ -13,3 +13,10 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 - [Card Widget](listtypes/card.md)
 - [ListTile Widget](listtypes/listile.md)
 - [ListView](listtypes/listview.md)
+
+
+## 📂 Kullanıcı Etkileşimi
+
+- [Alert Dialog](dialogs/alertdialog.md)
+- [ListTile Widget](listtypes/listile.md)
+- [ListView](listtypes/listview.md)
