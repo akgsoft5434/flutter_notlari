@@ -152,34 +152,59 @@ class ShowDialogKullanimi extends StatelessWidget {
 | **insetPadding**    | Ekranın kenarlarından boşluk bırakmak için kullanılır. |
 
 
-💬 Onay (Evet / Hayır) Diyaloğu
+💬 Onay (Evet / Hayır) Dialog Penceresi
 ```dart
-void _showConfirmDialog(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: const Text('Emin misiniz?'),
-        content: const Text('Bu işlemi geri alamazsınız.'),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Text('İptal'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              // İşlem onaylandı
-              Navigator.pop(context);
-            },
-            child: const Text('Evet'),
-          ),
-        ],
-      );
-    },
-  );
+import 'package:flutter/material.dart';
+
+class ShowDialogKullanimi extends StatelessWidget {
+  const ShowDialogKullanimi({super.key});
+
+  void _showMyDialog(BuildContext myContext) {
+    showDialog(
+      context: myContext,
+      builder: (myContext) {
+        return AlertDialog(
+          title: const Text('Emin misiniz?'),
+          content: const Text('Bu işlemi geri alamazsınız.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(myContext);
+                print("İPTAL");
+              },
+              child: const Text('İptal'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // İşlem onaylandı
+                Navigator.pop(myContext);
+                print("ONAYLANDI");
+              },
+              child: const Text('Evet'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Basit AlertDialog Örneği'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () => _showMyDialog(context),
+          child: const Text('AlertDialog Göster'),
+        ),
+      ),
+    );
+  }
 }
+
 ```
 🧱 Özel Tasarımlı AlertDialog
 
