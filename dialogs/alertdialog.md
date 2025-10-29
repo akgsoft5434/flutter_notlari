@@ -85,25 +85,48 @@ Kullanıcı dışarıya tıklayarak dialogu kapatabilir.
 ## 🧩 Basit AlertDialog Örneği
 
 ```dart
-void _showMyDialog(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: const Text('Bilgilendirme'),
-        content: const Text('Bu bir AlertDialog örneğidir.'),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context); // Dialogu kapatır
-            },
-            child: const Text('Kapat'),
-          ),
-        ],
-      );
-    },
-  );
+import 'package:flutter/material.dart';
+
+class ShowDialogKullanimi extends StatelessWidget {
+  const ShowDialogKullanimi({super.key});
+
+  void _showMyDialog(BuildContext myContext) {
+    showDialog(
+      context: myContext,
+      builder: (myContext) {
+        return AlertDialog(
+          title: const Text('Bilgilendirme'),
+          content: const Text('Bu bir AlertDialog örneğidir.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(myContext); // Dialogu kapatır
+              },
+              child: const Text('Kapat'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Basit showDialog Örneği'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () => _showMyDialog(context),
+          child: const Text('Dialog Göster'),
+        ),
+      ),
+    );
+  }
 }
+
 ```
  <img src="../assets/Screenshot_20251029_174000.png" width="250"> 
 
