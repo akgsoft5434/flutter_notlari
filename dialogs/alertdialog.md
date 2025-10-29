@@ -11,14 +11,39 @@ Bu fonksiyon sayesinde **AlertDialog**, **basit Text**, veya kendi özel widget�
 ```dart
 import 'package:flutter/material.dart';
 
-class ShowDialogKullanimi extends StatelessWidget {
-  const ShowDialogKullanimi({super.key});
+void main() {
+  runApp(const MyApp());
+}
 
-  void _showDialogOrnek1(BuildContext myContext) {
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SimpleDialogExample(),
+    );
+  }
+}
+
+class SimpleDialogExample extends StatelessWidget {
+  const SimpleDialogExample({super.key});
+
+  // Basit bir metin dialogu gösteren fonksiyon
+  void _showSimpleTextDialog(BuildContext context) {
     showDialog(
-      context: myContext,
-      builder: (context) {
-        return Text("Selam!");
+      context: context,
+      builder: (BuildContext context) {
+        return const Center(
+          child: Text(
+            'Merhaba!',
+            style: TextStyle(
+              fontSize: 24,
+              color: Colors.white,
+            ),
+          ),
+        );
       },
     );
   }
@@ -32,14 +57,26 @@ class ShowDialogKullanimi extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-          onPressed: () => _showDialogOrnek1(context),
+          onPressed: () => _showSimpleTextDialog(context),
           child: const Text('Dialog Göster'),
         ),
       ),
     );
   }
 }
+
 ```
+🧠 Açıklama:
+
+ElevatedButton’a tıkladığında _showSimpleTextDialog fonksiyonu çalışır.
+
+showDialog metodu ekranın üstüne yeni bir modal pencere (overlay) açar.
+
+builder içinde sadece Text widget’ı döndürülür — bu nedenle sade bir “Merhaba!” yazısı görünür.
+
+Arka plan varsayılan olarak yarı saydam siyah olur.
+
+Kullanıcı dışarıya tıklayarak dialogu kapatabilir.
 
 
 ## 🧩 Basit AlertDialog Örneği
