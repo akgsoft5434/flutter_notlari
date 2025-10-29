@@ -133,7 +133,12 @@ class KisilerSayfasi extends StatelessWidget {
 }
 ```
 
-------------------------------------------------------------------------
+🧾 Açıklama:
+
+ListView ile birden fazla ListTile art arda sıralandı.
+
+Divider() satır aralarına ince çizgi eklemek için kullanıldı.
+
 
 ## 🧩 Dinamik `ListTile` Oluşturma
 
@@ -160,13 +165,83 @@ ListView.builder(
   },
 )
 ```
+🎓 Burada Ne Öğrendik?
 
-------------------------------------------------------------------------
+ListView.builder ile dinamik olarak veriden ListTile üretildi.
+
+Bu yöntem, özellikle veritabanından gelen veya API’den çekilen listeler için idealdir.
+
+## ✨ Özel Tasarımlı ListTile
+``` dart
+Card(
+  margin: const EdgeInsets.all(10),
+  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+  elevation: 5,
+  child: ListTile(
+    leading: const Icon(Icons.book, color: Colors.deepPurple),
+    title: const Text(
+      'Flutter Rehberi',
+      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+    ),
+    subtitle: const Text('Mobil uygulama geliştirmeye giriş'),
+    trailing: const Icon(Icons.star, color: Colors.amber),
+    tileColor: Colors.deepPurple[50],
+    onTap: () => debugPrint('Kitap seçildi'),
+  ),
+)
+```
+🧱 Ekstra Özellikler:
+
+| Özellik             | Açıklama                                  |
+| ------------------- | ----------------------------------------- |
+| `tileColor`         | Arka plan rengini ayarlar                 |
+| `selected`          | Satırın seçili olup olmadığını belirtir   |
+| `selectedColor`     | Seçili durumdaki yazı rengini belirler    |
+| `selectedTileColor` | Seçili satırın arka plan rengini belirler |
+
+
+🧩 Seçilebilir ListTile (örnek)
+
+bool secili = false;
+
+ListTile(
+  title: const Text('Flutter Dersi'),
+  trailing: Icon(
+    secili ? Icons.check_box : Icons.check_box_outline_blank,
+    color: Colors.blue,
+  ),
+  onTap: () {
+    secili = !secili;
+    debugPrint('Durum: $secili');
+  },
+)
+
+
+Bu yapı genellikle ayarlar menüsü, yapılacaklar listesi gibi durumlarda kullanılır.
+
+💬 İpucu
+
+ListTile basit liste görünümü için idealdir, ancak çok karmaşık yapılarda Row, Column veya özel widget kombinasyonları daha uygun olabilir.
+
+Görsel olarak Card ile birlikte kullanımı, profesyonel bir görünüm sağlar.
+
+ListTile ayrıca Radio, Checkbox, Switch gibi bileşenlerle de rahatlıkla entegre edilebilir.
+
+## 🧾 Özet
+
+| Konu                      | Açıklama                                                 |
+| ------------------------- | -------------------------------------------------------- |
+| **Amacı**                 | Liste biçiminde satır yapısı oluşturmak                  |
+| **Yaygın Kullanım Alanı** | Profil listesi, ayarlar menüsü, kişi listesi             |
+| **Önemli Özellikler**     | `leading`, `title`, `subtitle`, `trailing`               |
+| **Tıklanabilirlik**       | `onTap` ve `onLongPress`                                 |
+| **Ekstra**                | `isThreeLine`, `dense`, `tileColor`, `selectedTileColor` |
+
+
 
 ## 🚀 Sonuç
 
-`ListTile`, Flutter'da **liste biçimli satırlar** oluşturmak için
-kullanılan sade ama güçlü bir widget'tır.\
-**Profil listeleri, ayarlar menüleri ve kişi listeleri** gibi birçok
-yerde kullanılır.\
----
+ListTile, Flutter’da en çok kullanılan yapı taşlarından biridir.
+Basit ama güçlü bir yapıya sahip olduğu için menü listeleri, kişi bilgileri, ayar sayfaları gibi birçok senaryoda tercih edilir.
+
+Birçok widget ile uyumlu çalışarak uygulamanı hem kullanışlı hem de estetik hale getirir.
