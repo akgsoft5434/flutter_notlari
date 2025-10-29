@@ -1,3 +1,35 @@
+# 📱 Flutter `showDialog` Kullanımı
+
+## 🔍 `showDialog` Nedir?
+`showDialog`, Flutter'da ekranda modal (kullanıcı etkileşimini bloke eden) bir pencere açmak için kullanılan bir fonksiyondur.  
+Bu fonksiyon sayesinde **AlertDialog**, **basit Text**, veya kendi özel widget’larını gösterebilirsin.
+
+---
+
+## 🧩 Basit AlertDialog Örneği
+
+```dart
+void _showMyDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Bilgilendirme'),
+        content: const Text('Bu bir AlertDialog örneğidir.'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context); // Dialogu kapatır
+            },
+            child: const Text('Kapat'),
+          ),
+        ],
+      );
+    },
+  );
+}
+```
+
 # 📱 Flutter AlertDialog Kullanımı
 
 ## 🔍 AlertDialog Nedir?
