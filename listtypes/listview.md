@@ -69,9 +69,13 @@ ListView widget'ı children parametresiyle bir widget listesi alır.
 
 Liste kaydırılabilir (scrollable) olur.
 
-Örnek (Genişletilmiş Hali)
+## 🔁 3. ListView.builder ile Dinamik Liste
 
-## 🍇 Flutter — Sebze ve Meyve Emojili Liste Örneği
+Eğer listenin eleman sayısı fazla veya veri bir diziden geliyorsa, ListView.builder kullanmak çok daha verimlidir.
+
+
+
+### 🍇 Flutter — Sebze ve Meyve Emojili Liste Örneği
 
 Aşağıdaki örnek, 50 farklı meyve ve sebzeyi emoji ile birlikte gösteren bir `ListView.builder` uygulamasıdır.  
 Liste elemanları dinamik olarak `List<String>` içinden oluşturulur.  
@@ -176,43 +180,6 @@ class EmojiListApp extends StatelessWidget {
 }
 ```
 <img src="../assets/Screenshot_20251029_044118.png" width="250"> 
-
-## 🔁 3. ListView.builder ile Dinamik Liste
-
-Eğer listenin eleman sayısı fazla veya veri bir diziden geliyorsa, ListView.builder kullanmak çok daha verimlidir.
-
-```dart
-import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    List<String> meyveler = ["Elma", "Muz", "Karpuz", "Kiraz", "Çilek", "Kavun"];
-
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: const Text("ListView.builder Kullanımı")),
-        body: ListView.builder(
-          itemCount: meyveler.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: const Icon(Icons.local_florist),
-              title: Text(meyveler[index]),
-              subtitle: Text("Sıra: $index"),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-```
 
 ### 🟢 Avantajı:
 Sadece ekranda görünen elemanlar oluşturulur.
