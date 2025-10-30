@@ -316,9 +316,9 @@ class _GestureDemoPageState extends State<GestureDemoPage> {
 | `_x`, `_y`          | Kutunun yeni konumunu tutar.                         |
 | `AnimatedContainer` | Kutunun animasyonlu şekilde hareket etmesini sağlar. |
 
-<img src="../assets/Screen_recording_20251030_122138.gif" width="250">
 
 
+<img src="../assets/ezgif-816c42b5656763.gif" width="250">
 
 
 ## 🔚 Sonuç
