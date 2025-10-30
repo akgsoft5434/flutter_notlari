@@ -18,3 +18,10 @@ Center(
         ),
       )
 ```
+<img src="../assets/Screenshot_20251030_105816.png" width="250">
+
+Açıklama:
+
+`decoration` parametresi sadece Container içinde kullanılabilir.
+
+`color, border, borderRadius, gradient, image, boxShadow, shape` gibi özellikleri vardır.
