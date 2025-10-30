@@ -7,7 +7,8 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 
 
 ## 📂 Widget Tasarımı
-- [BoxDecoration](collections/list.md)
+- [BoxDecoration](widgetdesign/boxdecoration.md)
+- [GestureDetector, InkWell](widgetdesign/detectors.md)
 
 
 
