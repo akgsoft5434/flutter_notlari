@@ -26,10 +26,10 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 - [ListTile Widget](listtypes/listile.md)
 - [ListView](listtypes/listview.md)
 - [GridView](listtypes/gridview.md)
+- [SingleChildScrollView](listtypes/singlescrollview.md)
+  
 
 
 ## 📂 Kullanıcı Etkileşimi
 
 - [Alert Dialog](dialogs/alertdialog.md)
-- [ListTile Widget](listtypes/listile.md)
-- [ListView](listtypes/listview.md)
