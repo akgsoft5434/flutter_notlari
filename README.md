@@ -3,12 +3,12 @@
 Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmıştır.
 
 ## 📂 Widgets
-
-
-
+- [GestureDetector, InkWell](widgetdesign/detectors.md)
+- [SingleChildScrollView](listtypes/singlescrollview.md)
+  
 ## 📂 Widget Tasarımı
 - [BoxDecoration](widgetdesign/boxdecoration.md)
-- [GestureDetector, InkWell](widgetdesign/detectors.md)
+
 
 
 
@@ -26,9 +26,6 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 - [ListTile Widget](listtypes/listile.md)
 - [ListView](listtypes/listview.md)
 - [GridView](listtypes/gridview.md)
-- [SingleChildScrollView](listtypes/singlescrollview.md)
-  
-
 
 ## 📂 Kullanıcı Etkileşimi
 
