@@ -123,15 +123,21 @@ void main() {
 ```
 🔍 Açıklama:
 
-GridView.builder → Sadece görünen öğeleri oluşturur (performanslı).
+`GridView.builder` → Sadece görünen öğeleri oluşturur (performanslı).
 
-SliverGridDelegateWithFixedCrossAxisCount → Her satırda sabit sütun sayısı.
+`SliverGridDelegateWithFixedCrossAxisCount` → Her satırda sabit sütun sayısı.
 
-itemBuilder → Her hücreyi nasıl oluşturacağımızı belirler.
+`itemBuilder` → Her hücreyi nasıl oluşturacağımızı belirler.
 
 ## 🔹 3. GridView.extent Kullanımı
 
 Bu yöntemle, hücre genişliği (maksimum) belirtilir.
+
 Flutter otomatik olarak uygun sütun sayısını belirler.
 
 📘 Örnek:
+
+```dart
+
+
+```
