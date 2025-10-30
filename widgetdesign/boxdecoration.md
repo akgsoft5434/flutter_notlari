@@ -50,9 +50,24 @@ borderRadius: BorderRadius.only(
   bottomRight: Radius.circular(10),
 )
 ```
+
 `BorderRadius.circular()` — Tüm köşeleri eşit yuvarlar
+
 `BorderRadius.only()` — Belirli köşeleri yuvarlar
 
+## 🖼️ 3. Arka Plan Görseli (image)
 
+```dart
+Container(
+  height: 200,
+  width: 300,
+  decoration: BoxDecoration(
+    image: DecorationImage(
+      image: AssetImage('assets/images/background.jpg'),
+      fit: BoxFit.cover,
+    ),
+  ),
+)
+```
 
 
