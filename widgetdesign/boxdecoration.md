@@ -148,12 +148,17 @@ Container(
 
 ### 🔹 Sadece belirli kenarlara
 ```dart
-decoration: BoxDecoration(
-  border: Border(
-    top: BorderSide(color: Colors.red, width: 2),
-    bottom: BorderSide(color: Colors.blue, width: 3),
-  ),
-)
+Container(
+          width: 300,
+          height: 300,
+          decoration: BoxDecoration(
+            color: Colors.grey,
+            border: Border(
+              top: BorderSide(color: Colors.red, width: 2),
+              bottom: BorderSide(color: Colors.blue, width: 3),
+            ),
+          ),
+        ),
 ```
 <img src="../assets/Screenshot_20251030_111655.png" width="250">
 
