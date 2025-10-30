@@ -4,7 +4,7 @@ Flutter’da GestureDetector, kullanıcı etkileşimlerini (dokunma, sürükleme
 
 Herhangi bir görsel bileşeni “dokunulabilir” veya “hareketle kontrol edilebilir” hale getirmek için kullanılır.
 
-🔍 Temel Tanım
+## 🔍 Temel Tanım
 
 ```dart
 GestureDetector(
@@ -21,7 +21,7 @@ GestureDetector(
 
 📌 Bu örnekte Container, bir dokunma (tap) olayına duyarlı hale getirilmiştir.
 
-🧩 Desteklenen Olaylar
+## 🧩 Desteklenen Olaylar
 
 GestureDetector, çok sayıda dokunma ve hareket türünü algılayabilir:
 
@@ -43,7 +43,7 @@ GestureDetector, çok sayıda dokunma ve hareket türünü algılayabilir:
 | `onScaleStart`, `onScaleUpdate`, `onScaleEnd` | İki parmakla büyütme/küçültme (zoom) hareketlerini algılar. |
 
 
-🧠 Örnek: Çift Tıklama ve Uzun Basma
+### 🧠 Örnek: Çift Tıklama ve Uzun Basma
 
 ```dart
 GestureDetector(
@@ -63,7 +63,7 @@ GestureDetector(
 );
 ```
 
-🎯 Sürükleme (Drag) Örneği
+## 🎯 Sürükleme (Drag) Örneği
 ```dart
 double _x = 0;
 double _y = 0;
@@ -86,7 +86,7 @@ GestureDetector(
 
 📌 Bu örnekte, kutu parmak hareketiyle ekranda sürüklenebilir hale getirilmiştir.
 
-⚙️ onTapDown / onTapUp ile Geri Bildirim Ekleme
+## ⚙️ onTapDown / onTapUp ile Geri Bildirim Ekleme
 ```dart
 GestureDetector(
   onTapDown: (_) => print('Basıldı'),
@@ -99,12 +99,12 @@ GestureDetector(
 );
 ```
 
-🎨 Görsel Geri Bildirim İstiyorsan: InkWell veya InkResponse
+## 🎨 Görsel Geri Bildirim İstiyorsan: InkWell veya InkResponse
 
 GestureDetector, dokunma efekti (ripple effect) göstermez.
 Kullanıcıya görsel geri bildirim vermek istiyorsan şu alternatifleri kullanabilirsin:
 
-🔸 1. InkWell (en çok kullanılan alternatif)
+### 🔸 1. InkWell (en çok kullanılan alternatif)
 ```dart
 InkWell(
   onTap: () {
@@ -121,7 +121,7 @@ InkWell(
 📍 Avantajı: Ripple efekti (dalga animasyonu) gösterir.
 📍 Dezavantajı: Material widget içinde kullanılmalıdır (aksi halde efekt görünmez).
 
-🔸 2. InkResponse (daha gelişmiş versiyon)
+### 🔸 2. InkResponse (daha gelişmiş versiyon)
 ```dart
 InkResponse(
   onTap: () {
@@ -134,7 +134,7 @@ InkResponse(
 
 📍 InkResponse, InkWell’a benzer fakat efektin merkezi ve yarıçapı üzerinde daha fazla kontrol sağlar.
 
-⚖️ Karşılaştırma Tablosu
+### ⚖️ Karşılaştırma Tablosu
 
 | Özellik                   | GestureDetector | InkWell   | InkResponse |
 | ------------------------- | --------------- | --------- | ----------- |
@@ -146,13 +146,13 @@ InkResponse(
 
 
 
-🧱 En İyi Kullanım Senaryoları
+### 🧱 En İyi Kullanım Senaryoları
 
 GestureDetector → özel animasyonlar, sürükleme, pinch zoom, pan hareketleri gibi gelişmiş durumlar.
 
 InkWell / InkResponse → buton benzeri öğeler (örn. menü, liste öğesi) için.
 
-🧩 Örnek: GestureDetector + Animasyon
+### 🧩 Örnek: GestureDetector + Animasyon
 
 ```dart
 class AnimatedBox extends StatefulWidget {
@@ -191,7 +191,7 @@ class _AnimatedBoxState extends State<AnimatedBox> {
 
 📌 Dokunulduğunda kutu büyüyüp küçülür.
 
-🔚 Sonuç
+## 🔚 Sonuç
 
 `GestureDetector:` Etkileşim algılamak için esnek ve güçlüdür.
 
