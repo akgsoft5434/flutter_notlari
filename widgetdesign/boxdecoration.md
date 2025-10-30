@@ -110,7 +110,7 @@ decoration: BoxDecoration(
 )
 ```
 
-<img src="../assets/Screenshot_20251030_111655.png" width="250">
+<img src="../assets/Screenshot_20251030_112621.png" width="250">
 
 
 ### 🔹 Sweep Gradient (Dönel)
@@ -123,7 +123,7 @@ decoration: BoxDecoration(
 ```
 🔸 Gradient’ler arka plan rengine göre daha yüksek önceliğe sahiptir.
 
-<img src="../assets/Screenshot_20251030_111655.png" width="250">
+<img src="../assets/Screenshot_20251030_112640.png" width="250">
 
 
 ## ⚙️ 5. Kenarlık Ekleme (border)
@@ -143,7 +143,7 @@ Container(
           ),
         )
 ```
-<img src="../assets/Screenshot_20251030_111655.png" width="250">
+<img src="../assets/Screenshot_20251030_112740.png" width="250">
 
 
 ### 🔹 Sadece belirli kenarlara
@@ -160,7 +160,7 @@ Container(
           ),
         ),
 ```
-<img src="../assets/Screenshot_20251030_111655.png" width="250">
+<img src="../assets/Screenshot_20251030_113056.png" width="250">
 
 ## 🕶️ 6. Gölge Ekleme (boxShadow)
 
@@ -186,7 +186,7 @@ BoxShape.rectangle (varsayılan)
 
 BoxShape.circle
 
-<img src="../assets/Screenshot_20251030_111655.png" width="250">
+<img src="../assets/Screenshot_20251030_113734.png" width="250">
 
 
 ## 🔍 7. color ve decoration Çakışması
@@ -202,4 +202,3 @@ Container(
 
 ✅ Yalnızca decoration içinde renk belirtmelisin.
 
-<img src="../assets/Screenshot_20251030_111655.png" width="250">
