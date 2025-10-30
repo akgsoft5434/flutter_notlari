@@ -38,16 +38,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(title: const Text('GridView.count Örneği')),
-         body: GridView.count(
+        body: GridView.count(
           crossAxisCount: 2, // her satırda 2 sütun
           crossAxisSpacing: 10, // yatay boşluk
           mainAxisSpacing: 10, // dikey boşluk
-          padding: const EdgeInsets.all(5),
-          children: List.generate(30, (index) {
+          padding: const EdgeInsets.all(10),
+          children: List.generate(6, (index) {
             return Container(
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: Colors.blue[100 * ((index + 1) % 9)],
+                color: Colors.blueAccent,
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Text(
@@ -61,6 +61,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 ```
 
 🔍 Açıklama:
