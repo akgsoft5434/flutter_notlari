@@ -184,3 +184,117 @@ void main() {
 `maxCrossAxisExtent: 120` → Her kutu en fazla 120 piksel genişliğinde olur.
 
 Ekran genişliğine göre otomatik sütun sayısı belirlenir.
+
+## 🔹GridView ve Resim Gösterimi
+
+Resim galerisi tarzında bir grid oluşturabiliriz.
+
+📸 Örnek:
+
+```dart
+import 'package:flutter/material.dart';
+
+class ImageGridExample extends StatelessWidget {
+  final List<String> images = [
+    'https://picsum.photos/200/300?1',
+    'https://picsum.photos/200/300?2',
+    'https://picsum.photos/200/300?3',
+    'https://picsum.photos/200/300?4',
+    'https://picsum.photos/200/300?5',
+    'https://picsum.photos/200/300?6',
+  ];
+
+  ImageGridExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Resim GridView')),
+      body: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, // 2 sütun
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),
+        itemCount: images.length,
+        itemBuilder: (context, index) {
+          return ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: Image.network(images[index], fit: BoxFit.cover),
+          );
+        },
+      ),
+    );
+  }
+}
+
+void main() {
+  runApp(MaterialApp(home: ImageGridExample()));
+}
+```
+## 🔹 GridView ile Kart Tasarımı
+
+Kart tarzı modern bir görünüm elde etmek için Card widget’ı kullanılabilir.
+
+💳 Örnek:
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(home: CardGridExample()));
+}
+
+class CardGridExample extends StatelessWidget {
+  final List<String> titles = [
+    'Profil',
+    'Ayarlar',
+    'Mesajlar',
+    'Bildirimler',
+    'Yardım',
+    'Çıkış'
+  ];
+
+  CardGridExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('GridView + Card Örneği')),
+      body: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),
+        itemCount: titles.length,
+        padding: const EdgeInsets.all(10),
+        itemBuilder: (context, index) {
+          return Card(
+            color: Colors.deepPurpleAccent,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Center(
+              child: Text(
+                titles[index],
+                style: const TextStyle(color: Colors.white, fontSize: 18),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+```
+
+🎯 Özet:
+
+| Kullanım Tipi      | Özellik                  | Avantaj                   |
+| ------------------ | ------------------------ | ------------------------- |
+| `GridView.count`   | Sabit sütun sayısı       | Basit ve anlaşılır        |
+| `GridView.builder` | Dinamik + performanslı   | Büyük veri listeleri için |
+| `GridView.extent`  | Maksimum hücre genişliği | Ekrana göre uyumlu        |
+| `GridView.custom`  | Tam kontrol              | Özel grid yapıları için   |
+
+
