@@ -191,6 +191,8 @@ class _AnimatedBoxState extends State<AnimatedBox> {
 
 📌 Dokunulduğunda kutu büyüyüp küçülür.
 
+<img src="../assets/ezgif-8fdf24becc7211.gif" width="250">
+
 ## 🔚 Sonuç
 
 `GestureDetector:` Etkileşim algılamak için esnek ve güçlüdür.
