@@ -3,7 +3,7 @@
 BoxDecoration, Flutter’da Container, Box, Card gibi widget’ların arka planını (background), kenarlıklarını (border), köşe yuvarlamalarını (borderRadius), gölgelerini (boxShadow), ve hatta arka plan resimlerini (image) ayarlamak için kullanılan güçlü bir sınıftır.
 
 ---
-## 🧩 Temel Kullanım
+## 🎨 1. Renk Ekleme `(color)`
 
 ```dart
 Center(
@@ -25,3 +25,34 @@ Açıklama:
 `decoration` parametresi sadece Container içinde kullanılabilir.
 
 `color, border, borderRadius, gradient, image, boxShadow, shape` gibi özellikleri vardır.
+
+## 🟪 2. Köşeleri Yuvarlama (borderRadius)
+
+```dart
+Container(
+  height: 100,
+  width: 200,
+  decoration: BoxDecoration(
+    color: Colors.teal,
+    borderRadius: BorderRadius.circular(20),
+  ),
+)
+
+```
+
+<img src="../assets/Screenshot_20251030_110244.png" width="250">
+
+### 🔹 Diğer Kullanım Biçimleri
+
+```dart
+borderRadius: BorderRadius.only(
+  topLeft: Radius.circular(30),
+  bottomRight: Radius.circular(10),
+)
+```
+`BorderRadius.circular()` — Tüm köşeleri eşit yuvarlar
+`BorderRadius.only()` — Belirli köşeleri yuvarlar
+
+
+
+
