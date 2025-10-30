@@ -79,6 +79,8 @@ image: DecorationImage(
 )
 ```
 
+<img src="../assets/Screenshot_20251030_111655.png" width="250">
+
 ## 🌈 4. Renk Geçişi (Gradient)
 
 ### 🔹 Linear Gradient (Doğrusal)
