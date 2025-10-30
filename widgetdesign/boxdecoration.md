@@ -70,4 +70,28 @@ Container(
 )
 ```
 
+### 🔸 Network Image örneği
 
+```dart
+image: DecorationImage(
+  image: NetworkImage('https://picsum.photos/300/200'),
+  fit: BoxFit.cover,
+)
+```
+
+## 🌈 4. Renk Geçişi (Gradient)
+
+### 🔹 Linear Gradient (Doğrusal)
+```dart
+Container(
+  height: 150,
+  width: 300,
+  decoration: BoxDecoration(
+    gradient: LinearGradient(
+      colors: [Colors.pink, Colors.orange],
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+    ),
+  ),
+)
+```
