@@ -171,8 +171,8 @@ void main() {
 
 ```
 <div style="display: flex; gap: 10px;">
-  <img src="Screenshot_20251030_101754.png" width="250">
-  <img src="Screenshot_20251030_101809.png" width="750">
+  <img src="../assets/Screenshot_20251030_101754.png" width="250">
+  <img src="../assets/Screenshot_20251030_101809.png" width="750">
 </div>
 
 🔍 Açıklama:
