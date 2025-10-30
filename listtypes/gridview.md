@@ -138,12 +138,43 @@ Flutter otomatik olarak uygun sütun sayısını belirler.
 📘 Örnek:
 
 ```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
+      appBar: AppBar(title: const Text('GridView.extent Örneği')),
+      body: GridView.extent(
+        maxCrossAxisExtent: 120, // her hücrenin maksimum genişliği
+        padding: const EdgeInsets.all(8),
+        mainAxisSpacing: 8,
+        crossAxisSpacing: 8,
+        children: List.generate(20, (index) {
+          return Container(
+            decoration: BoxDecoration(
+              color: Colors.orange,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Center(
+              child: Text(
+                'Kutu ${index + 1}',
+                style: const TextStyle(color: Colors.white),
+              ),
+            ),
+          );
+        }),
+      ),
+    ),
+  ));
+}
 
 
 ```
- <img src="../assets/Screenshot_20251030_101754.png" width="250"> 
- <img src="../assets/Screenshot_20251030_101809.png" width="250"> 
-  
+<div style="display: flex; gap: 10px;">
+  <img src="Screenshot_20251030_101754.png" width="250">
+  <img src="Screenshot_20251030_101809.png" width="750">
+</div>
+
 🔍 Açıklama:
 
 `maxCrossAxisExtent: 120` → Her kutu en fazla 120 piksel genişliğinde olur.
