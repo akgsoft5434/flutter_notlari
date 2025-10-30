@@ -3,7 +3,7 @@
 `GridView`, Flutter’da öğeleri (örneğin resimler, kartlar, butonlar vb.) ızgara (grid) şeklinde göstermek için kullanılır.
 Yani ListView’in kare veya dikdörtgen hücrelerden oluşan versiyonu gibidir.
 
-## 🔹 1. GridView Nedir?
+## 🔹 GridView Nedir?
 
 `GridView`, çoklu öğeleri satır ve sütunlara bölerek gösterir.
 Flutter'da birkaç temel kullanım şekli vardır:
@@ -16,7 +16,7 @@ Flutter'da birkaç temel kullanım şekli vardır:
 
 `GridView.custom`
 
-## 🔹 2. GridView.count Kullanımı
+## 🔹 1. GridView.count Kullanımı
 
 En basit ve en çok kullanılan yöntemdir.
 Sabit sütun sayısı belirterek Grid oluşturur.
@@ -74,7 +74,7 @@ class MyApp extends StatelessWidget {
 
 `List.generate()` → Otomatik olarak 6 kutu üretir.
 
-## 🔹 3. GridView.builder Kullanımı
+## 🔹 2. GridView.builder Kullanımı
 
 Büyük veri listelerinde performans açısından en uygunudur.
 Sadece ekranda görünen hücreler oluşturulur (lazy loading).
@@ -121,4 +121,17 @@ void main() {
   ));
 }
 ```
+🔍 Açıklama:
 
+GridView.builder → Sadece görünen öğeleri oluşturur (performanslı).
+
+SliverGridDelegateWithFixedCrossAxisCount → Her satırda sabit sütun sayısı.
+
+itemBuilder → Her hücreyi nasıl oluşturacağımızı belirler.
+
+## 🔹 3. GridView.extent Kullanımı
+
+Bu yöntemle, hücre genişliği (maksimum) belirtilir.
+Flutter otomatik olarak uygun sütun sayısını belirler.
+
+📘 Örnek:
