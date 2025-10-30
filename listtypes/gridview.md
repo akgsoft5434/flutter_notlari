@@ -141,3 +141,11 @@ Flutter otomatik olarak uygun sütun sayısını belirler.
 
 
 ```
+ <img src="../assets/Screenshot_20251030_101754.png" width="250"> 
+ <img src="../assets/Screenshot_20251030_101809.png" width="250"> 
+  
+🔍 Açıklama:
+
+`maxCrossAxisExtent: 120` → Her kutu en fazla 120 piksel genişliğinde olur.
+
+Ekran genişliğine göre otomatik sütun sayısı belirlenir.
