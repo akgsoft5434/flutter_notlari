@@ -1,5 +1,16 @@
 # 📘 Flutter Dersleri
+
 Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmıştır.
+
+## 📂 Widgets
+
+
+
+## 📂 Widget Tasarımı
+- [BoxDecoration](collections/list.md)
+
+
+
 ## 📂 Collections
 
 - [Listeler](collections/list.md)
