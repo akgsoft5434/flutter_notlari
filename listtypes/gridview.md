@@ -121,6 +121,10 @@ void main() {
   ));
 }
 ```
+
+ <img src="../assets/Screenshot_20251030_102604.png" width="250"> 
+
+ 
 🔍 Açıklama:
 
 `GridView.builder` → Sadece görünen öğeleri oluşturur (performanslı).
