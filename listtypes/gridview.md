@@ -232,6 +232,10 @@ void main() {
   runApp(MaterialApp(home: ImageGridExample()));
 }
 ```
+
+ <img src="../assets/Screenshot_20251030_104627.png" width="250"> 
+
+ 
 ## 🔹 GridView ile Kart Tasarımı
 
 Kart tarzı modern bir görünüm elde etmek için Card widget’ı kullanılabilir.
@@ -287,6 +291,10 @@ class CardGridExample extends StatelessWidget {
   }
 }
 ```
+
+ <img src="../assets/Screenshot_20251030_104744.png" width="250"> 
+
+ 
 
 🎯 Özet:
 
