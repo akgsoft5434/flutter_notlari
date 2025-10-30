@@ -64,20 +64,23 @@ class MyApp extends StatelessWidget {
 
 ```
 
+ <img src="../assets/Screenshot_20251030_094908.png" width="250"> 
+
 🔍 Açıklama:
 
-crossAxisCount: 2 → Her satırda 2 kutu gösterir.
+`crossAxisCount: 2` → Her satırda 2 kutu gösterir.
 
-mainAxisSpacing ve crossAxisSpacing → Kutular arası boşluk ayarlar.
+`mainAxisSpacing` ve `crossAxisSpacing` → Kutular arası boşluk ayarlar.
 
-List.generate() → Otomatik olarak 6 kutu üretir.
+`List.generate()` → Otomatik olarak 6 kutu üretir.
 
-##🔹 3. GridView.builder Kullanımı
+## 🔹 3. GridView.builder Kullanımı
 
 Büyük veri listelerinde performans açısından en uygunudur.
 Sadece ekranda görünen hücreler oluşturulur (lazy loading).
 
 📘 Örnek:
+
 ```dart
 import 'package:flutter/material.dart';
 
