@@ -193,6 +193,134 @@ class _AnimatedBoxState extends State<AnimatedBox> {
 
 <img src="../assets/ezgif-8fdf24becc7211.gif" width="250">
 
+
+### 🧩 Örnek: GestureDetector Örnek Uygulaması
+
+Aşağıda Flutter’da farklı jestleri (tap, double tap, long press, drag) tek ekranda gösteren interaktif bir örnek uygulama kodu var.
+Kod doğrudan çalıştırılabilir ve her hareket türü için ayrı bir tepki verir.
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(GestureDemoApp());
+
+class GestureDemoApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'GestureDetector Demo',
+      debugShowCheckedModeBanner: false,
+      home: GestureDemoPage(),
+    );
+  }
+}
+
+class GestureDemoPage extends StatefulWidget {
+  @override
+  _GestureDemoPageState createState() => _GestureDemoPageState();
+}
+
+class _GestureDemoPageState extends State<GestureDemoPage> {
+  String _message = "🖐️ Bir hareket yap!";
+  double _x = 0;
+  double _y = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("GestureDetector Örneği"),
+        backgroundColor: Colors.blueAccent,
+      ),
+      body: Stack(
+        children: [
+          Center(
+            child: Text(
+              _message,
+              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
+          ),
+
+          // 🟦 Sürüklenebilir kutu
+          Positioned(
+            left: MediaQuery.of(context).size.width / 2 - 50 + _x,
+            top: MediaQuery.of(context).size.height / 2 - 50 + _y,
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  _message = "👆 Tek dokundun!";
+                });
+              },
+              onDoubleTap: () {
+                setState(() {
+                  _message = "✌️ Çift tıklama algılandı!";
+                });
+              },
+              onLongPress: () {
+                setState(() {
+                  _message = "⏱️ Uzun bastın!";
+                });
+              },
+              onPanUpdate: (details) {
+                setState(() {
+                  _x += details.delta.dx;
+                  _y += details.delta.dy;
+                  _message = "🚚 Sürükleniyor...";
+                });
+              },
+              onPanEnd: (_) {
+                setState(() {
+                  _message = "🛑 Sürükleme bitti!";
+                });
+              },
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  color: Colors.blueAccent,
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 10,
+                      offset: Offset(3, 3),
+                    ),
+                  ],
+                ),
+                alignment: Alignment.center,
+                child: const Text(
+                  "Kutu",
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+🔍 Kod Açıklaması
+
+| Bölüm               | Açıklama                                             |
+| ------------------- | ---------------------------------------------------- |
+| `onTap`             | Tek dokunma algılar.                                 |
+| `onDoubleTap`       | Çift tıklama algılar.                                |
+| `onLongPress`       | Uzun basma algılar.                                  |
+| `onPanUpdate`       | Parmağın ekranda sürüklenme hareketini algılar.      |
+| `onPanEnd`          | Sürükleme işlemi bittiğinde tetiklenir.              |
+| `_x`, `_y`          | Kutunun yeni konumunu tutar.                         |
+| `AnimatedContainer` | Kutunun animasyonlu şekilde hareket etmesini sağlar. |
+
+<img src="../assets/Screen_recording_20251030_122138.gif" width="250">
+
+
+
+
 ## 🔚 Sonuç
 
 `GestureDetector:` Etkileşim algılamak için esnek ve güçlüdür.
