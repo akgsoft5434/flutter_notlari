@@ -6,13 +6,15 @@ BoxDecoration, Flutter’da Container, Box, Card gibi widget’ların arka plan�
 ## 🧩 Temel Kullanım
 
 ```dart
-Container(
-  decoration: BoxDecoration(
-    color: Colors.blue, // Arka plan rengi
-  ),
-  child: Text(
-    "Merhaba Flutter!",
-    style: TextStyle(color: Colors.white),
-  ),
-)
+Center(
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.blue, // Arka plan rengi
+          ),
+          child: Text(
+            "Merhaba Flutter!",
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+      )
 ```
