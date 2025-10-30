@@ -85,15 +85,15 @@ image: DecorationImage(
 
 ### 🔹 Linear Gradient (Doğrusal)
 ```dart
-Container(
-  height: 150,
-  width: 300,
-  decoration: BoxDecoration(
-    gradient: LinearGradient(
-      colors: [Colors.pink, Colors.orange],
-      begin: Alignment.topLeft,
-      end: Alignment.bottomRight,
-    ),
-  ),
-)
+ Container(
+          height: 300,
+          width: 300,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.red, Colors.yellow],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+          ),
+        ),
 ```
