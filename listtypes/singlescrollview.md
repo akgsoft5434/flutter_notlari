@@ -32,3 +32,19 @@ SingleChildScrollView(
 `keyboardDismissBehavior` — Klavye nasıl kapanır (onDrag veya manual).
 
 `clipBehavior` — Taşan içeriğin nasıl kırpılacağı.
+
+
+##  ✅ Ne zaman kullanmalı?
+
+İçerik tek bir sütun/tek bir satır ise ve öğe sayısı çok büyük değilse (ör. makul uzunlukta formlar, tanıtım sayfaları).
+
+İçerik dinamik ama toplam öğe sayısı küçük/orta ise.
+
+Basit yatay kaydırma yapmak istiyorsan (Row içine SingleChildScrollView(scrollDirection: Axis.horizontal)).
+
+###  ❌ Ne zaman kullanmamalı?
+
+Büyük/kayıtça uzun çok sayıda öğe varsa (ör. 1000 öğelik liste). Bu durumda ListView.builder veya SliverList kullan — bunlar tembel yükleme (lazy loading) yapar ve belleği korur.
+
+Tekil widget child yerine birden fazla bağımsız kaydırılabilir alan gerekiyorsa (Nested scroll senaryolarında dikkat gerek).
+
