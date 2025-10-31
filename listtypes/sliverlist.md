@@ -160,6 +160,10 @@ class SliverListExample extends StatelessWidget {
 ### ⚙️ Performans İpuçları
 
 ✅ SliverChildBuilderDelegate kullan (lazy loading sayesinde performanslıdır).
+
 ✅ addRepaintBoundaries parametresini true bırak — her öğe bağımsız boyanır.
+
 ✅ Uzun listelerde childCount belirtmeyi unutma (aksi halde sonsuz kaydırma hatası olabilir).
+
 ✅ Görsel olarak çok karmaşık öğeleri ayrı widget sınıfı yaparak yönetmek daha temizdir.
+
