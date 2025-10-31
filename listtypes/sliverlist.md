@@ -1,4 +1,5 @@
 # 📜 Flutter SliverList — Detaylı Anlatım ve Örnekler
+
 ## 🚀 Giriş
 
 `SliverList`, Flutter’da kaydırılabilir bir liste oluşturmak için kullanılan özel bir Sliver bileşenidir.
@@ -75,6 +76,24 @@ SliverList(
   ]),
 ),
 
+```
+## 🧱 SliverFixedExtentList (Ekstra Bilgi)
+
+Eğer listedeki tüm öğelerin yüksekliği sabit ise (ListTile gibi), 
+
+SliverFixedExtentList daha performanslıdır.
+```dart
+SliverFixedExtentList(
+  itemExtent: 80.0,
+  delegate: SliverChildBuilderDelegate(
+    (BuildContext context, int index) {
+      return ListTile(
+        title: Text('Sabit Yükseklikli Öğə #$index'),
+      );
+    },
+    childCount: 30,
+  ),
+),
 ```
 
 ### 🧩 CustomScrollView ile Tam Kullanım Örneği
