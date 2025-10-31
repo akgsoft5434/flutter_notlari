@@ -28,6 +28,7 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 - [GridView](listtypes/gridview.md)
 - [SingleChildScrollView](listtypes/singlescrollview.md)
 - [CustomScrollView](listtypes/customscrollview.md)
+- - [CustomScrollView](listtypes/customscrollview.md)
 
 ## 📂 Kullanıcı Etkileşimi
 
