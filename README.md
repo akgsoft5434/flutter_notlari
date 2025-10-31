@@ -5,6 +5,7 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 ## 📂 Widgets
 - [GestureDetector, InkWell](widgetdesign/detectors.md)
 - [SingleChildScrollView](listtypes/singlescrollview.md)
+- [CustomScrollView](listtypes/customscrollview.md)
   
 ## 📂 Widget Tasarımı
 - [BoxDecoration](widgetdesign/boxdecoration.md)
