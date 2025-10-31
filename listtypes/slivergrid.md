@@ -62,11 +62,12 @@ Her hücrenin maksimum genişliğini belirler; ekrana sığan sayıda sütun oto
 
 Parametreler:
 
-maxCrossAxisExtent — her hücrenin maksimum genişliği (px).
+`maxCrossAxisExtent` — her hücrenin maksimum genişliği (px).
 
-mainAxisSpacing, crossAxisSpacing, childAspectRatio.
+`mainAxisSpacing`, `crossAxisSpacing`, `childAspectRatio`.
 
 Kullanım:
+
 ```dart
 SliverGridDelegateWithMaxCrossAxisExtent(
   maxCrossAxisExtent: 200,
@@ -78,13 +79,13 @@ SliverGridDelegateWithMaxCrossAxisExtent(
 
 🔁 delegate Seçenekleri
 
-SliverChildBuilderDelegate
+`SliverChildBuilderDelegate`
 
-Lazy oluşturur. Büyük/uzun listeler için ideal.
+- Lazy oluşturur. Büyük/uzun listeler için ideal.
 
-childCount ile toplam öğe sayısını ver.
+- childCount ile toplam öğe sayısını ver.
 
-SliverChildListDelegate
+`SliverChildListDelegate`
 
 Tüm öğeleri önceden tutar. Küçük, sabit listeler için uygun.
 
