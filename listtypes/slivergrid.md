@@ -212,7 +212,7 @@ class SliverGridDemoPage extends StatelessWidget {
 }
 ```
 
-## ✨ Gelişmiş İpuçları ve Özelleştirmeler
+### ✨ Gelişmiş İpuçları ve Özelleştirmeler
 
 - Farklı yüksekliğe sahip (masonry/staggered) grid istiyorsan flutter_staggered_grid_view gibi paketler kullanabilirsin. (Core Flutter sadece sabit/aspect ratio tabanlı grid sağlar.)
 
@@ -224,7 +224,7 @@ class SliverGridDemoPage extends StatelessWidget {
 
 - childAspectRatio ile kare, dik veya yatay hücreler kolayca ayarlanır.
 
-⚠️ Yaygın Hatalar / Dikkat Edilecekler
+### ⚠️ Yaygın Hatalar / Dikkat Edilecekler
 
 - Sonsuz yükleme: childCount belirtmezsen veya yanlış hesaplarsan beklenmedik davranış olabilir.
 
@@ -234,7 +234,7 @@ class SliverGridDemoPage extends StatelessWidget {
 
 - Ağ resimleri: her hücrede ağ resmi varsa, düzgün cache ve placeholder yönetimi yapılmalı.
 
-🚦 Performans İpuçları
+### 🚦 Performans İpuçları
 
 - Lazy loading kullan: SliverChildBuilderDelegate tercih et.
 
@@ -246,20 +246,20 @@ class SliverGridDemoPage extends StatelessWidget {
 
 - childAspectRatio doğru ayarlanırsa layout hesaplama daha hızlıdır.
 
-🔁 SliverGrid ve SliverList Karşılaştırması / Ne Zaman Hangisi?
+### 🔁 SliverGrid ve SliverList Karşılaştırması / Ne Zaman Hangisi?
 
 - Elemanlar kutu/ızgara içinde gösterilecekse → SliverGrid.
 
 - Her eleman tek satır şeklindeyse (ListTile gibi) → SliverList veya SliverFixedExtentList (sabit yüksekse daha hızlı).
 
-📌 Özet — Hızlı Püf Noktaları
+### 📌 Özet — Hızlı Püf Noktaları
 
-SliverGrid ile ekran genişliğine göre dinamik sütun/çerçeve oluşturabilirsin.
+- SliverGrid ile ekran genişliğine göre dinamik sütun/çerçeve oluşturabilirsin.
 
-SliverGridDelegateWithFixedCrossAxisCount → sabit sütun sayısı.
+- SliverGridDelegateWithFixedCrossAxisCount → sabit sütun sayısı.
 
-SliverGridDelegateWithMaxCrossAxisExtent → maksimum hücre genişliği.
+- SliverGridDelegateWithMaxCrossAxisExtent → maksimum hücre genişliği.
 
-Büyük veriler için SliverChildBuilderDelegate (lazy) kullan.
+- Büyük veriler için SliverChildBuilderDelegate (lazy) kullan.
 
-Karmaşık/masonry düzen için üçüncü parti paketlere bak.
+- Karmaşık/masonry düzen için üçüncü parti paketlere bak.
