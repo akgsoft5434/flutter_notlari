@@ -40,11 +40,54 @@ SingleChildScrollView(
 
 İçerik dinamik ama toplam öğe sayısı küçük/orta ise.
 
-Basit yatay kaydırma yapmak istiyorsan (Row içine SingleChildScrollView(scrollDirection: Axis.horizontal)).
+Basit yatay kaydırma yapmak istiyorsan (Row içine `SingleChildScrollView(scrollDirection: Axis.horizontal`)).
 
-###  ❌ Ne zaman kullanmamalı?
+##  ❌ Ne zaman kullanmamalı?
 
-Büyük/kayıtça uzun çok sayıda öğe varsa (ör. 1000 öğelik liste). Bu durumda ListView.builder veya SliverList kullan — bunlar tembel yükleme (lazy loading) yapar ve belleği korur.
+Büyük/kayıtça uzun çok sayıda öğe varsa (ör. 1000 öğelik liste). Bu durumda `ListView.builder` veya `SliverList` kullan — 
+
+bunlar tembel yükleme (lazy loading) yapar ve belleği korur.
 
 Tekil widget child yerine birden fazla bağımsız kaydırılabilir alan gerekiyorsa (Nested scroll senaryolarında dikkat gerek).
 
+## 🧠 Yaygın Hatalar ve Dikkat Edilmesi Gerekenler
+
+### 1) Column içinde Expanded / Flexible kullanımı
+
+SingleChildScrollView içine koyduğun Column sınırsız (unbounded) yükseklik alır. Expanded veya Flexible kullanırsan hata alırsın (RenderFlex children have non-zero flex but incoming height constraints are unbounded).
+
+Çözüm yolları:
+
+Expanded yerine sabit yükseklik (SizedBox) kullan.
+
+ConstrainedBox veya IntrinsicHeight ile sarmalayarak sınırlamak (performans etkileyebilir).
+
+Örnek (hatalı):
+```dart
+SingleChildScrollView(
+  child: Column(
+    children: [
+      Expanded(child: ...), // HATA
+    ],
+  ),
+)
+```
+
+Doğru kullanım örneği (form için):
+
+```dart
+
+SingleChildScrollView(
+  padding: EdgeInsets.all(16),
+  child: Column(
+    crossAxisAlignment: CrossAxisAlignment.stretch,
+    children: [
+      Text('Başlık'),
+      SizedBox(height: 16),
+      TextField(),
+      SizedBox(height: 16),
+      ElevatedButton(onPressed: (){}, child: Text('Gönder')),
+    ],
+  ),
+)
+```
