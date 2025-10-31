@@ -1,6 +1,6 @@
-#📜 Flutter CustomScrollView
+# 📜 Flutter CustomScrollView
 
-##🚀 Giriş
+## 🚀 Giriş
 
 `CustomScrollView`, Flutter'da kaydırılabilir (scrollable) alanlar oluşturmak için kullanılan güçlü bir widget’tır.
 
