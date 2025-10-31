@@ -29,6 +29,7 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 - [SingleChildScrollView](listtypes/singlescrollview.md)
 - [CustomScrollView](listtypes/customscrollview.md)
 - - [SliverList](listtypes/sliverlist.md)
+- - [SliverGrid](listtypes/slivergrid.md)
 
 ## 📂 Kullanıcı Etkileşimi
 
