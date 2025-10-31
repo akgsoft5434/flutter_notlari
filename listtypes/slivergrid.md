@@ -214,43 +214,43 @@ class SliverGridDemoPage extends StatelessWidget {
 
 ## ✨ Gelişmiş İpuçları ve Özelleştirmeler
 
-Farklı yüksekliğe sahip (masonry/staggered) grid istiyorsan flutter_staggered_grid_view gibi paketler kullanabilirsin. (Core Flutter sadece sabit/aspect ratio tabanlı grid sağlar.)
+- Farklı yüksekliğe sahip (masonry/staggered) grid istiyorsan flutter_staggered_grid_view gibi paketler kullanabilirsin. (Core Flutter sadece sabit/aspect ratio tabanlı grid sağlar.)
 
-SliverPadding ile grid çevresine padding uygulamak daha doğru sonuç verir (her hücreye ayrı margin vermek yerine).
+- SliverPadding ile grid çevresine padding uygulamak daha doğru sonuç verir (her hücreye ayrı margin vermek yerine).
 
-Görsel içerikli hücrelerde FadeInImage, CachedNetworkImage vb. ile önbelleğe alma kullan; ağdan yüklenen resimler performansı etkileyebilir.
+- Görsel içerikli hücrelerde FadeInImage, CachedNetworkImage vb. ile önbelleğe alma kullan; ağdan yüklenen resimler performansı etkileyebilir.
 
-Her öğeyi ayrı küçük widget sınıfı olarak yaz; rebuild maliyetini düşürür ve kod okunurluğu artar.
+- Her öğeyi ayrı küçük widget sınıfı olarak yaz; rebuild maliyetini düşürür ve kod okunurluğu artar.
 
-childAspectRatio ile kare, dik veya yatay hücreler kolayca ayarlanır.
+- childAspectRatio ile kare, dik veya yatay hücreler kolayca ayarlanır.
 
 ⚠️ Yaygın Hatalar / Dikkat Edilecekler
 
-Sonsuz yükleme: childCount belirtmezsen veya yanlış hesaplarsan beklenmedik davranış olabilir.
+- Sonsuz yükleme: childCount belirtmezsen veya yanlış hesaplarsan beklenmedik davranış olabilir.
 
-IntrinsicHeight/IntrinsicWidth kullanımı: hücrelerin içindeki karmaşık hesaplamalar performansı düşürebilir.
+- IntrinsicHeight/IntrinsicWidth kullanımı: hücrelerin içindeki karmaşık hesaplamalar performansı düşürebilir.
 
-Expanded/Flexible: Sliver içinde genelde Expanded kullanmaya çalışmak anlamsızdır; hücreler kendi boyutlarını childAspectRatio ile belirler.
+- Expanded/Flexible: Sliver içinde genelde Expanded kullanmaya çalışmak anlamsızdır; hücreler kendi boyutlarını childAspectRatio ile belirler.
 
-Ağ resimleri: her hücrede ağ resmi varsa, düzgün cache ve placeholder yönetimi yapılmalı.
+- Ağ resimleri: her hücrede ağ resmi varsa, düzgün cache ve placeholder yönetimi yapılmalı.
 
 🚦 Performans İpuçları
 
-Lazy loading kullan: SliverChildBuilderDelegate tercih et.
+- Lazy loading kullan: SliverChildBuilderDelegate tercih et.
 
-const kullanabildiğin yerlerde kullan (statik görünümler için).
+- const kullanabildiğin yerlerde kullan (statik görünümler için).
 
-Ağ resimlerini önbellekle (paket veya Image.network + cacheWidth/cacheHeight kullanımı).
+- Ağ resimlerini önbellekle (paket veya Image.network + cacheWidth/cacheHeight kullanımı).
 
-Çok karmaşık hücre UI’ları varsa RepaintBoundary ile sınırlandır veya ayrı widget’a taşı.
+- Çok karmaşık hücre UI’ları varsa RepaintBoundary ile sınırlandır veya ayrı widget’a taşı.
 
-childAspectRatio doğru ayarlanırsa layout hesaplama daha hızlıdır.
+- childAspectRatio doğru ayarlanırsa layout hesaplama daha hızlıdır.
 
 🔁 SliverGrid ve SliverList Karşılaştırması / Ne Zaman Hangisi?
 
-Elemanlar kutu/ızgara içinde gösterilecekse → SliverGrid.
+- Elemanlar kutu/ızgara içinde gösterilecekse → SliverGrid.
 
-Her eleman tek satır şeklindeyse (ListTile gibi) → SliverList veya SliverFixedExtentList (sabit yüksekse daha hızlı).
+- Her eleman tek satır şeklindeyse (ListTile gibi) → SliverList veya SliverFixedExtentList (sabit yüksekse daha hızlı).
 
 📌 Özet — Hızlı Püf Noktaları
 
