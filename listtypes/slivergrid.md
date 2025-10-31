@@ -77,7 +77,7 @@ SliverGridDelegateWithMaxCrossAxisExtent(
 )
 ```
 
-🔁 delegate Seçenekleri
+### 🔁 delegate Seçenekleri
 
 `SliverChildBuilderDelegate`
 
@@ -90,18 +90,18 @@ SliverGridDelegateWithMaxCrossAxisExtent(
 Tüm öğeleri önceden tutar. Küçük, sabit listeler için uygun.
 
 Örnek:
-
+```dart
 delegate: SliverChildBuilderDelegate(
   (BuildContext context, int index) => Card(...),
   childCount: items.length,
 ),
+```
 
-
-🧪 Tam Çalışır Örnek (main.dart)
+## 🧪 Tam Çalışır Örnek (main.dart)
 
 Aşağıdaki örnek CustomScrollView içinde SliverAppBar, SliverToBoxAdapter, iki farklı SliverGrid (FixedCrossAxisCount ve MaxCrossAxisExtent) gösterir.
 
-
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(SliverGridDemoApp());
@@ -210,9 +210,9 @@ class SliverGridDemoPage extends StatelessWidget {
     );
   }
 }
+```
 
-
-✨ Gelişmiş İpuçları ve Özelleştirmeler
+## ✨ Gelişmiş İpuçları ve Özelleştirmeler
 
 Farklı yüksekliğe sahip (masonry/staggered) grid istiyorsan flutter_staggered_grid_view gibi paketler kullanabilirsin. (Core Flutter sadece sabit/aspect ratio tabanlı grid sağlar.)
 
