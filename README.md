@@ -4,8 +4,7 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 
 ## 📂 Widgets
 - [GestureDetector, InkWell](widgetdesign/detectors.md)
-- [SingleChildScrollView](listtypes/singlescrollview.md)
-- [CustomScrollView](listtypes/customscrollview.md)
+
   
 ## 📂 Widget Tasarımı
 - [BoxDecoration](widgetdesign/boxdecoration.md)
@@ -21,12 +20,14 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 - [Set Yapısı](collections/sets.md)
 - [Map Yapısı](collections/maps.md)
   
-## 📂 ListView
+## 📂 ListView ve Diğer Çeşitleri
 
 - [Card Widget](listtypes/card.md)
 - [ListTile Widget](listtypes/listile.md)
 - [ListView](listtypes/listview.md)
 - [GridView](listtypes/gridview.md)
+- [SingleChildScrollView](listtypes/singlescrollview.md)
+- [CustomScrollView](listtypes/customscrollview.md)
 
 ## 📂 Kullanıcı Etkileşimi
 
