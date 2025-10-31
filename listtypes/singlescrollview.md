@@ -91,3 +91,23 @@ SingleChildScrollView(
   ),
 )
 ```
+
+
+## ⚖️ Performans Notları
+
+SingleChildScrollView tüm child ağacını tek seferde render eder. Çok büyük içeriklerde bellek ve performans sorunlarına yol açabilir.
+
+Uzun listeler için ListView.builder, ListView.separated ya da SliverList tercih et.
+
+IntrinsicHeight ve IntrinsicWidth gibi widget’lar performansı düşürebilir; sadece gerektiğinde kullan.
+
+### 🔁 Alternatifler ve Ne Zaman Hangisini Seçmeli?
+
+|                                 Senaryo | Önerilen Widget                                                             |
+| --------------------------------------: | --------------------------------------------------------------------------- |
+|         Uzun, dinamik ve çok sayıda öğe | `ListView.builder` veya `SliverList`                                        |
+|      Tek bir sütun, form, az sayıda öğe | `SingleChildScrollView` + `Column`                                          |
+|                Yatay küçük öğe kaydırma | `SingleChildScrollView(scrollDirection: Axis.horizontal)`                   |
+| AppBar + kaydırılabilir içerik + TabBar | `NestedScrollView` veya `CustomScrollView` + Slivers                        |
+|              Yenileme (pull-to-refresh) | `RefreshIndicator` + `SingleChildScrollView(AlwaysScrollableScrollPhysics)` |
+
