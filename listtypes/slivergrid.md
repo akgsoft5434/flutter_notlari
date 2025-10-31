@@ -1,13 +1,15 @@
 # 📚 SliverGrid
 
-Aşağıda Flutter’ın SliverGrid yapısını, gridDelegate türlerini, delegate kullanımını, örnekleri, performans ipuçlarını ve sık yapılan hataları detaylı şekilde anlatıyorum.
+Aşağıda Flutter’ın `SliverGrid` yapısını, `gridDelegate` türlerini, `delegate` kullanımını, örnekleri, performans ipuçlarını ve sık yapılan hataları detaylı şekilde anlatıyorum.
 
 ## 🚀 Özet — Ne işe yarar?
 
-SliverGrid, CustomScrollView içinde ızgara (grid) düzeni oluşturmak için kullanılan bir Sliver bileşenidir. SliverList gibi lazy (gerektiğinde oluşturma) davranışı destekler ve gridDelegate ile ızgara düzeninin nasıl davranacağını tanımlar.
+`SliverGrid`, `CustomScrollView` içinde ızgara (grid) düzeni oluşturmak için kullanılan bir Sliver bileşenidir. 
+
+`SliverList` gibi lazy (gerektiğinde oluşturma) davranışı destekler ve gridDelegate ile ızgara düzeninin nasıl davranacağını tanımlar.
 
 ## 🧩 Temel Yapı
-
+```dart
 SliverGrid(
   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
     crossAxisCount: 2,
@@ -22,37 +24,39 @@ SliverGrid(
     childCount: 20,
   ),
 ),
+```
 
-gridDelegate: Izgara düzenini tanımlar (sütun sayısı, boşluklar, boyut oranı...).
+`gridDelegate:` Izgara düzenini tanımlar (sütun sayısı, boşluklar, boyut oranı...).
 
-delegate: Hücreleri nasıl ve ne zaman oluşturacağını belirler (lazy/fixed).
+`delegate:` Hücreleri nasıl ve ne zaman oluşturacağını belirler (lazy/fixed).
 
-🧭 gridDelegate Seçenekleri
-1. SliverGridDelegateWithFixedCrossAxisCount
+## 🧭 gridDelegate Seçenekleri
+
+### 1. SliverGridDelegateWithFixedCrossAxisCount
 
 Sabit sütun sayısı kullanılır.
 
 Parametreler:
 
-crossAxisCount — (zorunlu) satır başına sütun sayısı.
+`crossAxisCount` — (zorunlu) satır başına sütun sayısı.
 
-mainAxisSpacing — dikey boşluk.
+`mainAxisSpacing` — dikey boşluk.
 
-crossAxisSpacing — yatay boşluk.
+`crossAxisSpacing` — yatay boşluk.
 
-childAspectRatio — genişlik / yükseklik oranı (örn. 1 → kare).
+`childAspectRatio` — genişlik / yükseklik oranı (örn. 1 → kare).
 
 Kullanım:
-
+```dart
 SliverGridDelegateWithFixedCrossAxisCount(
   crossAxisCount: 3,
   mainAxisSpacing: 10,
   crossAxisSpacing: 10,
   childAspectRatio: 0.75,
 )
+```
 
-
-2. SliverGridDelegateWithMaxCrossAxisExtent
+### 2. SliverGridDelegateWithMaxCrossAxisExtent
 
 Her hücrenin maksimum genişliğini belirler; ekrana sığan sayıda sütun otomatik hesaplanır.
 
@@ -63,16 +67,17 @@ maxCrossAxisExtent — her hücrenin maksimum genişliği (px).
 mainAxisSpacing, crossAxisSpacing, childAspectRatio.
 
 Kullanım:
-
+```dart
 SliverGridDelegateWithMaxCrossAxisExtent(
   maxCrossAxisExtent: 200,
   mainAxisSpacing: 8,
   crossAxisSpacing: 8,
   childAspectRatio: 1.2,
 )
-
+```
 
 🔁 delegate Seçenekleri
+
 SliverChildBuilderDelegate
 
 Lazy oluşturur. Büyük/uzun listeler için ideal.
