@@ -13,3 +13,51 @@ Geri dönmek = `pop` (yığından çıkarma)
 Flutter’da sayfa geçişi `Navigator.push()` ve `Navigator.pop()` ile yapılır.
 
 ### 📄 Örnek 1: Temel İki Sayfa Geçişi
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    home: AnaSayfa(),
+  ));
+}
+
+class AnaSayfa extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Ana Sayfa")),
+      body: Center(
+        child: ElevatedButton(
+          child: Text("Detay Sayfasına Git"),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => DetaySayfa()),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class DetaySayfa extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Detay Sayfası")),
+      body: Center(
+        child: ElevatedButton(
+          child: Text("Geri Dön"),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
+}
+```
+
