@@ -61,3 +61,18 @@ class DetaySayfa extends StatelessWidget {
 }
 ```
 
+🧠 Açıklama:
+
+`Navigator.push()` → Yeni sayfa açar.
+
+`Navigator.pop()` → Önceki sayfaya döner.
+
+`MaterialPageRoute()` → Sayfalar arası geçiş animasyonunu yönetir.
+
+
+## 📦 2. Sayfalar Arası Veri Aktarma
+
+Bir sayfadan diğerine parametre gönderebilirsin.
+
+### 📄 Örnek 2: Veri Gönderme ve Alma
+
