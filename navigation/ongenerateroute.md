@@ -1,1 +1,1 @@
-132.sayfadan sona kadar
+132.desrten sona kadar-emre hoca
