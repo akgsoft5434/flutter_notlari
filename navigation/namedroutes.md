@@ -138,18 +138,18 @@ class ThirdPage extends StatelessWidget {
 ```
 
 
-📦 5. Rotalar Arasında Veri Aktarma
-🎯 Veri Gönderme
-
+## 📦 5. Rotalar Arasında Veri Aktarma
+### 🎯 Veri Gönderme
+```dart
 Navigator.pushNamed(
   context,
   '/second',
   arguments: 'Selam! Ben HomePage’den geldim.',
 );
+```
 
-
-🎯 SecondPage’te Veriyi Alma
-
+### 🎯 SecondPage’te Veriyi Alma
+```dart
 final args = ModalRoute.of(context)!.settings.arguments as String;
 
 return Scaffold(
@@ -158,12 +158,12 @@ return Scaffold(
     child: Text(args),
   ),
 );
+```
 
-
-🧰 6. onGenerateRoute Kullanımı (Daha Esnek Yöntem)
+## 🧰 6. onGenerateRoute Kullanımı (Daha Esnek Yöntem)
 
 Eğer rota listesi dinamik olacaksa veya rota bulunamadığında özel işlem yapmak istiyorsan, onGenerateRoute kullanılır.
-
+```dart
 MaterialApp(
   initialRoute: '/',
   onGenerateRoute: (settings) {
@@ -182,9 +182,9 @@ MaterialApp(
     }
   },
 );
+```
 
-
-🔄 7. Rotalar Arasında Geri Dönme
+## 🔄 7. Rotalar Arasında Geri Dönme
 
 | İşlem                            | Kod                                                     |
 | -------------------------------- | ------------------------------------------------------- |
@@ -194,12 +194,12 @@ MaterialApp(
 | Belirli sayfayı değiştirerek git | `Navigator.pushReplacementNamed(context, '/home')`      |
 
 
-⚡ 8. Örnek: Basit Uygulama Akışı
-
+## ⚡ 8. Örnek: Basit Uygulama Akışı
+```dart
 main.dart
  ├── routes: { '/', '/second', '/third' }
  ├── HomePage
  ├── SecondPage
  └── ThirdPage
-
+```
 
