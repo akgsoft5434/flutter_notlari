@@ -59,8 +59,11 @@ print(matrix); // [[1], [1], [1]]  => Hepsi aynı referansı paylaşıyor!
 var matrix = List<List<int>>.generate(3, (_) => []);
 matrix[0].add(1);
 print(matrix); // [[1], [], []]
+```
 
 ## 🧱 3. List.generate
+
+```dart
 List<E>.generate(int length, E generator(int index), { bool growable = false })
 ```
 
