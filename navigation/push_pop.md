@@ -73,6 +73,34 @@ class DetaySayfa extends StatelessWidget {
 `MaterialPageRoute()` → Sayfalar arası geçiş animasyonunu yönetir.
 
 
+### 🧭 Flutter automaticallyImplyLeading Özelliği
+
+🧩 Nedir?
+
+`automaticallyImplyLeading`, AppBar widget’ında bulunan bir bool (true/false) özelliktir.
+
+AppBar’da geri tuşu (back button), drawer ikonu (☰) veya benzeri otomatik ikonların
+
+görünüp görünmeyeceğini kontrol eder.
+
+⚙️ Kullanım Biçimi
+
+```dart
+AppBar(
+  title: Text("Sayfa Başlığı"),
+  automaticallyImplyLeading: true, // veya false
+)
+```
+
+🎯 automaticallyImplyLeading: false
+
+Flutter artık geri dönme tuşunu otomatik eklemez.
+
+Sol tarafta hiçbir ikon görünmez (Drawer bile görünmez).
+
+Bu durumda kendi özel geri tuşunu veya ikonunu manuel olarak eklemen gerekir.
+
+
 ## 📦 2. Sayfalar Arası Veri Aktarma
 
 Bir sayfadan diğerine parametre gönderebilirsin.
