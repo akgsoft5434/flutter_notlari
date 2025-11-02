@@ -128,9 +128,9 @@ class DetaySayfa extends StatelessWidget {
 ```
 🧠 Açıklama:
 
-DetaySayfa(veri: mesaj) ile veri gönderildi.
+`DetaySayfa(veri: mesaj)` ile veri gönderildi.
 
-final String veri; parametresiyle veri alındı.
+`final String veri;` parametresiyle veri alındı.
 
 
 ## 🔙 3. Geri Dönerken Veri Gönderme
@@ -200,3 +200,8 @@ class DetaySayfa extends StatelessWidget {
   }
 }
 ```
+🧠 Açıklama:
+
+`await Navigator.push(...)` → Sayfadan veri bekler.
+
+`Navigator.pop(context, veri)` → Geri dönerken veri gönderir.
