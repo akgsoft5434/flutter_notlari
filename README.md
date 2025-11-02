@@ -39,5 +39,5 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 
 - [Navigator.push() - Navigator.pop()](navigation/push_pop.md)
 - [WillPopScope, MaybePop, CanPop](navigation/willpopscope.md)
-- [Named Routes](navigation/push_pop.md)
+- [Named Routes](navigation/namedroutes.md)
  
