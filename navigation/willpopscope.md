@@ -167,6 +167,9 @@ Navigator.maybePop(context);
 | `Navigator.maybePop(context)` | Eğer geri gidilebilecek sayfa varsa **geri gider**, yoksa **hiçbir şey yapmaz.** |
 
 
+📄 Örnek 1: Güvenli Geri Dönüş
+
+
 ```dart
 import 'package:flutter/material.dart';
 
@@ -210,3 +213,47 @@ class DetaySayfa extends StatelessWidget {
   }
 }
 ```
+
+
+🧠 Açıklama:
+
+Eğer bu sayfa push ile açılmışsa, maybePop() geri döner.
+
+Eğer doğrudan home: olarak açılmışsa, geri gidilecek sayfa yoksa hiçbir şey yapmaz — hata da verme
+
+
+📄 Örnek 2: Geri Dönme Yerine Bir İşlem Yapma
+
+Bazen ana sayfada geri tuşu yerine uyarı göstermek istersin.
+
+```dart
+onPressed: () async {
+  bool popped = await Navigator.maybePop(context);
+
+  if (!popped) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text("Zaten ana sayfadasın!")),
+    );
+  }
+}
+
+```
+🧠 Açıklama:
+
+maybePop bir Future<bool> döner.
+
+true → geri gidildi
+
+false → geri gidilemedi (örneğin zaten ana sayfadasın)
+
+🧩 Özet
+
+| Özellik       | Açıklama                                        |
+| ------------- | ----------------------------------------------- |
+| Metot         | `Navigator.maybePop(context)`                   |
+| Dönüş tipi    | `Future<bool>`                                  |
+| `true` döner  | Eğer geri gidildiyse                            |
+| `false` döner | Geri gidilecek sayfa yoksa                      |
+| Avantajı      | Hata vermeden güvenli şekilde geri gitme sağlar |
+
+
