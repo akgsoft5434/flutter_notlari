@@ -66,3 +66,78 @@ class AnaSayfa extends StatelessWidget {
   }
 }
 ```
+
+✅ Sonuç:
+Geri tuşuna basıldığında sayfa kapanmaz, sadece mesaj görünür.
+
+### 📄 Örnek 2: Çıkmadan Önce Onay İsteme (AlertDialog)
+
+```dart
+
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(home: OnaySayfa()));
+
+class OnaySayfa extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return WillPopScope(
+      onWillPop: () async {
+        bool cikilsinMi = await showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text("Çıkmak istiyor musun?"),
+            content: Text("Kaydedilmemiş değişiklikler kaybolacak."),
+            actions: [
+              TextButton(
+                child: Text("Hayır"),
+                onPressed: () => Navigator.of(context).pop(false),
+              ),
+              TextButton(
+                child: Text("Evet"),
+                onPressed: () => Navigator.of(context).pop(true),
+              ),
+            ],
+          ),
+        );
+        return cikilsinMi; // true => çık, false => kal
+      },
+      child: Scaffold(
+        appBar: AppBar(title: Text("Onaylı Çıkış")),
+        body: Center(child: Text("Geri tuşuna bas ve uyarıyı gör.")),
+      ),
+    );
+  }
+}
+```
+
+✅ Sonuç:
+Geri tuşuna basıldığında kullanıcıdan onay ister.
+"Evet" → sayfa kapanır,
+"Hayır" → sayfa kalır.
+
+## 🧩 Parametreler
+
+| Parametre   | Tür            | Açıklama                                                                          |
+| ----------- | -------------- | --------------------------------------------------------------------------------- |
+| `onWillPop` | `Future<bool>` | Geri tuşuna basıldığında çağrılır. `true` dönerse çıkılır, `false` dönerse kalır. |
+| `child`     | `Widget`       | Sayfanın içeriği (örneğin Scaffold).                                              |
+
+
+## ⚙️ Teknik Detay
+
+`WillPopScope`, Navigator’ın pop işlemini yakalar.
+
+Eğer onWillPop’dan false dönerse, Navigator.pop iptal edilir.
+
+Sadece en üstteki route için geçerlidir.
+
+
+🧾 Özet
+
+| Kullanım Amacı                | Kod / Açıklama                   |
+| ----------------------------- | -------------------------------- |
+| Geri tuşunu engellemek        | `return false;`                  |
+| Onay penceresi göstermek      | `showDialog` ile kullanıcıya sor |
+| “Çıkmak için iki kez bas”     | Zaman farkı ile kontrol et       |
+| Sayfayı kapatmaya izin vermek | `return true;`                   |
