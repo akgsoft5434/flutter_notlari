@@ -36,6 +36,9 @@ class AnaSayfa extends StatelessWidget {
               context,
               MaterialPageRoute(builder: (context) => DetaySayfa()),
             );
+
+//2.Yöntem
+//  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DetaySayfa()));
           },
         ),
       ),
