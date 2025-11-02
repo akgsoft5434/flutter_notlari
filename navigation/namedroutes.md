@@ -203,3 +203,108 @@ main.dart
  └── ThirdPage
 ```
 
+Kullanıcı akışı:
+
+Ana sayfadan → İkinci sayfaya gider
+
+İkinci sayfadan → Üçüncü sayfaya gider
+
+Üçüncü sayfada → Geri döner
+
+Bu akışın tamamı sadece rota isimleriyle yönetilir.
+
+Kodun her yerinde Navigator.pushNamed(context, '/second') diyerek aynı geçişi kolayca yapabilirsin.
+
+## 🧠 9. İpuçları
+
+Rota adlarını sabit olarak tanımla, böylece yazım hatalarını önlersin:
+
+```dart
+class RouteNames {
+  static const home = '/';
+  static const second = '/second';
+  static const third = '/third';
+}
+```
+
+Kullanım:
+```dart
+Navigator.pushNamed(context, RouteNames.second);
+```
+
+## ✅ 10. Özet
+
+| Özellik                 | Açıklama                                         |
+| ----------------------- | ------------------------------------------------ |
+| `initialRoute`          | Uygulamanın ilk açılacağı rota                   |
+| `routes`                | Rota adlarını ve sayfalarını tanımladığın sözlük |
+| `Navigator.pushNamed()` | Rota ismiyle yeni sayfaya gitme                  |
+| `Navigator.pop()`       | Bir önceki sayfaya dönme                         |
+| `arguments`             | Sayfalar arası veri aktarımı                     |
+| `onGenerateRoute`       | Dinamik rota yönetimi                            |
+
+
+💡 Kısa Örnek (Tüm Kod Bir Arada)
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Named Routes Örneği',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+        '/second': (context) => SecondPage(),
+      },
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Ana Sayfa')),
+      body: Center(
+        child: ElevatedButton(
+          child: Text('İkinci Sayfaya Git'),
+          onPressed: () {
+            Navigator.pushNamed(context, '/second', arguments: 'Selam!');
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final data = ModalRoute.of(context)!.settings.arguments as String?;
+    return Scaffold(
+      appBar: AppBar(title: Text('İkinci Sayfa')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(data ?? 'Veri yok'),
+            SizedBox(height: 20),
+            ElevatedButton(
+              child: Text('Geri Dön'),
+              onPressed: () => Navigator.pop(context),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+
+
