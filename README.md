@@ -37,6 +37,5 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 
 ## Navigation İşlemleri
 
-- [Navigator.push() - Navigator.push()](navigation/push_pop.md)
-- [Navigator()](navigation/push.md)
-- 
+- [Navigator.push() - Navigator.pop() - Named Routes](navigation/push_pop.md)
+ 
