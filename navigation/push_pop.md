@@ -205,3 +205,86 @@ class DetaySayfa extends StatelessWidget {
 `await Navigator.push(...)` → Sayfadan veri bekler.
 
 `Navigator.pop(context, veri)` → Geri dönerken veri gönderir.
+
+
+## 🗺️ 4. Named Routes (İsimlendirilmiş Yönlendirme)
+
+Büyük projelerde yönetimi kolaylaştırmak için named route kullanılır.
+
+📄 Örnek 4: Named Route Kullanımı
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    initialRoute: '/',
+    routes: {
+      '/': (context) => AnaSayfa(),
+      '/detay': (context) => DetaySayfa(),
+    },
+  ));
+}
+
+class AnaSayfa extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Ana Sayfa")),
+      body: Center(
+        child: ElevatedButton(
+          child: Text("Detay Sayfasına Git"),
+          onPressed: () {
+            Navigator.pushNamed(context, '/detay');
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class DetaySayfa extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Detay Sayfası")),
+      body: Center(
+        child: ElevatedButton(
+          child: Text("Geri Dön"),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
+}
+```
+
+## 🧭 5. pushReplacement ve pushAndRemoveUntil
+
+Bazen yeni sayfayı açarken önceki sayfayı kapatmak isteyebilirsin.
+
+📄 Örnek 5: pushReplacement
+```dart
+Navigator.pushReplacement(
+  context,
+  MaterialPageRoute(builder: (context) => YeniSayfa()),
+);
+```
+
+👉 Bu yöntem, önceki sayfayı siler, geri dönülemez.
+
+
+📄 Örnek 6: pushAndRemoveUntil
+
+Tüm geçmiş sayfaları silip sadece yeni sayfayı bırakır.
+
+```dart
+Navigator.pushAndRemoveUntil(
+  context,
+  MaterialPageRoute(builder: (context) => AnaSayfa()),
+  (route) => false,
+);
+
+```
