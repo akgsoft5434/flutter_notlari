@@ -140,3 +140,73 @@ Sadece en üstteki route için geçerlidir.
 | Geri tuşunu engellemek        | `return false;`                  |
 | Onay penceresi göstermek      | `showDialog` ile kullanıcıya sor |
 | Sayfayı kapatmaya izin vermek | `return true;`                   |
+
+
+
+# 🧭 Flutter Navigator.maybePop() Nedir?
+
+## 🧩 Tanım
+
+`Navigator.maybePop()` metodu, geri gitmeyi (pop) deneyen, ama önce kontrol eden bir fonksiyondur.
+
+Yani:
+
+“Eğer geri gidilebilecek bir sayfa varsa git, yoksa hiçbir şey yapma (hata verme).”
+
+## ⚙️ Temel Kullanım
+```dart
+Navigator.maybePop(context);
+```
+
+
+🔍 Farkı Nedir?
+
+| Metot                         | Ne yapar?                                                                        |
+| ----------------------------- | -------------------------------------------------------------------------------- |
+| `Navigator.pop(context)`      | Her zaman geri gitmeye çalışır. Eğer `pop` yapılacak sayfa yoksa **hata verir.** |
+| `Navigator.maybePop(context)` | Eğer geri gidilebilecek sayfa varsa **geri gider**, yoksa **hiçbir şey yapmaz.** |
+
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(home: AnaSayfa()));
+
+class AnaSayfa extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Ana Sayfa")),
+      body: Center(
+        child: ElevatedButton(
+          child: Text("Detay Sayfasına Git"),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => DetaySayfa()),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class DetaySayfa extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Detay Sayfası"),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.maybePop(context); // güvenli pop
+          },
+        ),
+      ),
+      body: Center(child: Text("Geri tuşu güvenli çalışır.")),
+    );
+  }
+}
+```
