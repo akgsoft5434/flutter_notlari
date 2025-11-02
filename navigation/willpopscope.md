@@ -126,9 +126,9 @@ Geri tuşuna basıldığında kullanıcıdan onay ister.
 
 ## ⚙️ Teknik Detay
 
-`WillPopScope`, Navigator’ın pop işlemini yakalar.
+`WillPopScope`, `Navigator`’ın pop işlemini yakalar.
 
-Eğer onWillPop’dan false dönerse, Navigator.pop iptal edilir.
+Eğer `onWillPop`’dan false dönerse, `Navigator.pop` iptal edilir.
 
 Sadece en üstteki route için geçerlidir.
 
@@ -139,5 +139,4 @@ Sadece en üstteki route için geçerlidir.
 | ----------------------------- | -------------------------------- |
 | Geri tuşunu engellemek        | `return false;`                  |
 | Onay penceresi göstermek      | `showDialog` ile kullanıcıya sor |
-| “Çıkmak için iki kez bas”     | Zaman farkı ile kontrol et       |
 | Sayfayı kapatmaya izin vermek | `return true;`                   |
