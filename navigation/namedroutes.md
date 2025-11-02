@@ -13,24 +13,29 @@ Bu sayede sayfaları bir adla (string) tanımlarız ve geçişleri bu adla yapar
 ## ⚙️ 2. Temel Mantık
 
 Normal (Anonim) route örneği:
-
+```dart
 Navigator.push(
   context,
   MaterialPageRoute(builder: (context) => SecondPage()),
 );
+```
 
 Named route örneği:
 
+```dart
 Navigator.pushNamed(context, '/second');
+```
 
 Gördüğün gibi sadece sayfa adını ('/second') kullanarak geçiş yapılır.
 
 Bu yöntemde sayfalar merkezi bir noktada tanımlanır — bu, uygulama yapısını sadeleştirir.
 
+
 ## 🏗️ 3. Rotaları Tanımlama (main.dart içinde)
 
 📄 Örnek yapı
 
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -51,7 +56,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
+```
 
 Burada:
 
@@ -59,10 +64,12 @@ Burada:
 
 '/second' ve '/third' adlarında iki rota tanımlanmıştır.
 
-🏠 4. Sayfa (Widget) Örnekleri
-🏡 HomePage.dart
 
+## 🏠 4. Sayfa (Widget) Örnekleri
 
+### 🏡 HomePage.dart
+
+```dart
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -81,11 +88,12 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+```
 
 
+### 📄 SecondPage.dart
 
-📄 SecondPage.dart
-
+```dart
 import 'package:flutter/material.dart';
 
 class SecondPage extends StatelessWidget {
@@ -104,10 +112,11 @@ class SecondPage extends StatelessWidget {
     );
   }
 }
+```
 
+### 📄 ThirdPage.dart
 
-📄 ThirdPage.dart
-
+```dart
 import 'package:flutter/material.dart';
 
 class ThirdPage extends StatelessWidget {
@@ -126,7 +135,7 @@ class ThirdPage extends StatelessWidget {
     );
   }
 }
-
+```
 
 
 📦 5. Rotalar Arasında Veri Aktarma
