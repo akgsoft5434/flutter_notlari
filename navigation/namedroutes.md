@@ -22,7 +22,7 @@ Navigator.push(
 
 Named route örneği:
 
-```dart
+```c
 Navigator.pushNamed(context, '/second');
 ```
 
