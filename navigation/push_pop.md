@@ -288,3 +288,14 @@ Navigator.pushAndRemoveUntil(
 );
 
 ```
+
+⚙️ Özet
+
+| İşlem                      | Komut                                                 |
+| -------------------------- | ----------------------------------------------------- |
+| Yeni sayfa aç              | `Navigator.push()`                                    |
+| Geri dön                   | `Navigator.pop()`                                     |
+| Veriyle geri dön           | `Navigator.pop(context, veri)`                        |
+| Named route ile git        | `Navigator.pushNamed(context, '/detay')`              |
+| Önceki sayfayı silerek git | `Navigator.pushReplacement()`                         |
+| Tüm geçmişi silerek git    | `Navigator.pushAndRemoveUntil(..., (route) => false)` |
