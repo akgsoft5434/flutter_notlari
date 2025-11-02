@@ -37,5 +37,7 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 
 ## Navigation İşlemleri
 
-- [Navigator.push() - Navigator.pop() - Named Routes](navigation/push_pop.md)
+- [Navigator.push() - Navigator.pop()](navigation/push_pop.md)
+- [WillPopScope, MaybePop, CanPop](navigation/willpopscope.md)
+- [Named Routes](navigation/push_pop.md)
  
