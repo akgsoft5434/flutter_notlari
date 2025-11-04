@@ -93,3 +93,33 @@ TextField(
 
 ```
 💡 myController.text ile kullanıcı tarafından girilen metni alabilirsin.
+
+
+### 6. `textInputAction`
+
+Klavyedeki “Enter” tuşunun işlevini değiştirir. (örn. “next”, “done”, “search”)
+```dart
+TextField(
+  textInputAction: TextInputAction.search,
+);
+```
+### 7. `style`
+
+Yazı tipi, rengi ve boyutunu özelleştirir.
+```dart
+TextField(
+  style: TextStyle(color: Colors.blue, fontSize: 18),
+);
+```
+
+### 8. `enabled`
+
+`false` yapılırsa metin alanı devre dışı kalır.
+
+```dart
+TextField(
+  enabled: false,
+);
+```
+
+
