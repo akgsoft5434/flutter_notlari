@@ -163,10 +163,9 @@ TextField(
 2.örnek:
 ```dart
 TextField(
-           onChanged: (String deger){
-            if(deger.length >3)
-             print(deger);
-           },
-
-           )
+  onChanged: (String deger){
+    if(deger.length >3)
+      print(deger);
+  },
+)
 ```
