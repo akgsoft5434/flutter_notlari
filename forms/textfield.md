@@ -30,15 +30,27 @@ TextField(
 
 🧩 Örnekler:
 
-- TextInputType.text
+- `TextInputType.text`
 
-- TextInputType.number
+- `TextInputType.number`
 
-- TextInputType.emailAddress
+- `TextInputType.emailAddress`
 
-- TextInputType.multiline
+- `TextInputType.multiline`
 
-- TextInputType.phone
+- `TextInputType.phone`
+
+
+### 2. obscureText
+
+Metni gizler (şifre alanlarında kullanılır).
+```dart
+TextField(
+  obscureText: true,
+  decoration: InputDecoration(labelText: 'Şifre'),
+);
+```
+
 
 1. controller
 
