@@ -21,8 +21,8 @@ Bu sınıf sayesinde şunları yapabilirsin:
 
 Kullanıcının yazdığı metni okuyabilirsin
 
-Metin alanındaki içeriği programatik olarak değiştirebilirsin
+ Metin alanındaki içeriği programatik olarak değiştirebilirsin
 
-Dinleyici (listener) ekleyerek her değişikliği algılayabilirsin
+ Dinleyici (listener) ekleyerek her değişikliği algılayabilirsin
 
-TextField’ı temizleyebilir veya varsayılan değer verebilirsin
+ TextField’ı temizleyebilir veya varsayılan değer verebilirsin
