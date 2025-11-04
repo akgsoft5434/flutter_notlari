@@ -18,7 +18,7 @@ TextField(
 
 ## 🧠 Önemli Özellikler
 
-### 1. keyboardType
+### 1. `keyboardType`
 
 Klavye türünü belirler. (örn. sayı girişi, e-posta, çok satırlı metin)
 
