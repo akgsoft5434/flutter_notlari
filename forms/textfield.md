@@ -22,6 +22,23 @@ TextField(
 
 Klavye türünü belirler. (örn. sayı girişi, e-posta, çok satırlı metin)
 
+```dart
+TextField(
+  keyboardType: TextInputType.emailAddress,
+);
+```
+
+🧩 Örnekler:
+
+- TextInputType.text
+
+- TextInputType.number
+
+- TextInputType.emailAddress
+
+- TextInputType.multiline
+
+- TextInputType.phone
 
 1. controller
 
