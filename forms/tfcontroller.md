@@ -54,3 +54,33 @@ ElevatedButton(
 ```dart
 Kullanıcının yazdığı metin
 ```
+
+
+## ✏️ Controller ile Metni Değiştirme
+
+controller.text’e yeni bir değer atayarak TextField’daki metni değiştirebilirsin:
+```dart
+myController.text = "Varsayılan metin";
+```
+
+Bu atama yapıldığında, TextField içeriği otomatik olarak güncellenir.
+
+## 🧹 Metni Temizleme
+
+Bir TextField’ı temizlemek için:
+```dart
+myController.clear();
+```
+## 🪝 Değişiklikleri Dinlemek (addListener)
+
+controller’a bir dinleyici ekleyerek her metin değiştiğinde tepki verebilirsin.
+```dart
+myController.addListener(() {
+  print("Metin değişti: ${myController.text}");
+});
+```
+
+💡 Bu yöntem onChanged ile benzerdir ama daha kontrolcü düzeyinde çalışır,
+birden fazla TextField üzerinde aynı anda işlem yapmana olanak tanır.
+
+
