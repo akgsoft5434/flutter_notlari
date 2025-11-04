@@ -11,6 +11,7 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 
 ## 📂 Form Elemanları
 - [TextField](forms/textfield.md)
+- [TextField - controller özelliği](forms/tfcontroller.md)
 
 
 
