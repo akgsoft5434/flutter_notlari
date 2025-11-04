@@ -122,4 +122,40 @@ TextField(
 );
 ```
 
+### 9. `readOnly`
 
+Metin alanı sadece okunabilir olur (düzenleme yapılamaz).
+
+```dart
+TextField(
+  readOnly: true,
+  controller: TextEditingController(text: "Sadece okunabilir"),
+);
+```
+### 10. `cursorColor`, `cursorWidth`
+
+İmleç (cursor) rengini ve kalınlığını değiştirir.
+
+```dart
+TextField(
+  cursorColor: Colors.red,
+  cursorWidth: 3,
+);
+```
+
+6. `onChanged`, `onSubmitted`
+
+`onChanged:` Kullanıcı her yazdığında tetiklenir.
+
+`onSubmitted:` Kullanıcı klavyeden “Enter” tuşuna bastığında tetiklenir.
+
+```dart
+TextField(
+  onChanged: (value) {
+    print('Yazılan: $value');
+  },
+  onSubmitted: (value) {
+    print('Gönderilen: $value');
+  },
+);
+```
