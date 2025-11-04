@@ -41,7 +41,7 @@ TextField(
 - `TextInputType.phone`
 
 
-### 2. obscureText
+### 2. `obscureText`
 
 Metni gizler (şifre alanlarında kullanılır).
 ```dart
@@ -51,6 +51,17 @@ TextField(
 );
 ```
 
+### 3.`maxLength` ve `maxLines`
+
+`maxLength:` Girilebilecek maksimum karakter sayısı.
+
+`maxLines:` Satır sayısını belirler (örn. çok satırlı metin kutusu).
+```dart
+TextField(
+  maxLength: 50,
+  maxLines: 3,
+);
+```
 
 1. controller
 
