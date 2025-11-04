@@ -9,15 +9,15 @@ Bu sınıf `package:palette_generator/palette_generator.dart` kütüphanesinden 
 
 Bir görseldeki renkleri analiz eder ve şu renkleri döndürebilir:
 
-- 🎨 dominantColor → En baskın renk
+🎨 dominantColor → En baskın renk
 
-### 🌅 vibrantColor → Canlı renk
+🌅 vibrantColor → Canlı renk
 
-### 🌆 mutedColor → Soluk renk
+🌆 mutedColor → Soluk renk
 
-### 🌈 lightVibrantColor → Açık tonda canlı renk
+🌈 lightVibrantColor → Açık tonda canlı renk
 
-### 🌌 darkMutedColor → Koyu tonda soluk renk vb.
+🌌 darkMutedColor → Koyu tonda soluk renk vb.
 
 
 Bu sayede örneğin:
