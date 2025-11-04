@@ -143,7 +143,7 @@ TextField(
 );
 ```
 
-6. `onChanged`, `onSubmitted`
+### 11. `onChanged`, `onSubmitted`
 
 `onChanged:` Kullanıcı her yazdığında tetiklenir.
 
@@ -158,4 +158,15 @@ TextField(
     print('Gönderilen: $value');
   },
 );
+```
+
+2.örnek:
+```dart
+TextField(
+           onChanged: (String deger){
+            if(deger.length >3)
+             print(deger);
+           },
+
+           )
 ```
