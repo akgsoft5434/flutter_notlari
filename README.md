@@ -42,3 +42,7 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 - [Named Routes](navigation/namedroutes.md)
 - [onGenerateRoute - YAPILACAK...]()
  
+
+## Projelerde Kullanılabilecek Widget'lar
+
+- [palette_generator](widgets/pgen.md)
