@@ -63,8 +63,33 @@ TextField(
 );
 ```
 
-1. controller
+### 4. `decoration`
+
+Giriş alanının görünümünü özelleştirir.
+
+`InputDecoration` sınıfı ile kullanılır.
+```dart
+TextField(
+  decoration: InputDecoration(
+    labelText: 'E-posta',
+    hintText: 'E-posta adresinizi girin',
+    prefixIcon: Icon(Icons.email),
+    border: OutlineInputBorder(),
+  ),
+);
+```
+
+### 5. `controller`
 
 Girilen metni okumak veya değiştirmek için kullanılır.
 
-TextEditingController nesnesi gerekir.
+`TextEditingController` nesnesi gerekir.
+```dart
+final myController = TextEditingController();
+
+TextField(
+  controller: myController,
+);
+
+```
+💡 myController.text ile kullanıcı tarafından girilen metni alabilirsin.
