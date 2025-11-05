@@ -228,3 +228,16 @@ class _MyAppState extends State<MyApp> {
 ```
 
 <img src="../assets/ezgif-11f9347dbb7815.gif" width="250">
+
+
+### 🧠 Neden `listener`, `initState()` İçinde Kullanılır?
+
+`initState()`, bir `StatefulWidget` ekrana ilk defa yüklendiğinde yalnızca bir kez çalışan özel bir metottur.
+
+Bu yüzden:
+
+`addListener()` burada yazıldığında, listener sadece bir kez eklenir ✅
+
+Eğer build içinde yazarsan,
+
+widget her build edildiğinde yeni bir listener eklenir ❌ (Bu da aynı işlevin birden fazla kez çalışmasına neden olur.)
