@@ -199,7 +199,7 @@ class _LoginFormState extends State<LoginForm> {
 
 ```
 
-<img src="../assets/ezgif-10d652085eaf2a.gif" width="250">
+<img src="../assets/ezgif-106e42c0d2367b.gif" width="300">
 
 
 ### 🧾 Sık Kullanılan Özellikler Özeti
