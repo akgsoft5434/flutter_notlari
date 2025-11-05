@@ -241,3 +241,47 @@ Bu yüzden:
 Eğer build içinde yazarsan,
 
 widget her build edildiğinde yeni bir listener eklenir ❌ (Bu da aynı işlevin birden fazla kez çalışmasına neden olur.)
+
+### 🧩 Ne Zaman initState() Dışında Kullanılır?
+
+Bazı istisnai durumlar vardır 👇
+
+#### 1. Geçici veya koşullu dinleme gerekiyorsa
+
+Örneğin bir butona basınca dinlemeyi başlatmak istiyorsan:
+```dart
+ElevatedButton(
+  onPressed: () {
+    myController.addListener(() {
+      print("Dinleme başlatıldı: ${myController.text}");
+    });
+  },
+  child: Text("Listener Başlat"),
+);
+```
+
+#### 🧠 Ekstra Bilgi
+
+Eğer addListener içinde setState() kullanıyorsan, her değişiklikte UI güncellenir:
+
+```dart
+@override
+void initState() {
+  super.initState();
+  myController.addListener(() {
+    setState(() {}); // Text değişince ekran yenilenir
+  });
+}
+```
+
+Bu, örneğin kullanıcının yazdığı metni ekranda anlık göstermek için çok işe yarar 👇
+
+```dart
+Column(
+  children: [
+    TextField(controller: myController),
+    SizedBox(height: 10),
+    Text("Yazdığın: ${myController.text}"),
+  ],
+)
+```
