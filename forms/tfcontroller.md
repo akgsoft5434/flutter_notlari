@@ -121,3 +121,109 @@ Bu, özellikle çok sayıda TextField bulunan sayfalarda performans sorunlarına
 
 - Karakter Sayacı → Kullanıcının ne kadar yazdığını göstermek
 
+
+### 🧩 Örnek
+
+```dart
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  var myController = TextEditingController();
+  String mesaj = "";
+
+  // Varsayılan metin ekleyelim
+  @override
+  void initState() {
+    super.initState();
+    myController.text = "ilk değer atandı";
+
+    myController.addListener(() {
+      print("Şu anki metin: ${myController.text}");
+    });
+  }
+
+  @override
+  void dispose() {
+    myController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Form İşlemleri"),
+          backgroundColor: Colors.blue.shade300,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              Text("Yazılan Mesaj: $mesaj"),
+              SizedBox(height: 20),
+              TextField(
+                controller: myController,
+
+                decoration: InputDecoration(
+                  labelText: "Mesaj",
+                  filled: true,
+                  fillColor: Colors.grey.shade200,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 20),
+
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    mesaj = myController.text;
+                  });
+                  print(mesaj);
+                },
+                child: Text("Mesajı Yazdır"),
+              ),
+
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    myController.text = "değişen yazı";
+                  });
+                },
+                child: Text("Mesajı Değiştir"),
+              ),
+
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  myController.clear();
+                },
+                child: Text("Mesajı Temizle"),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+```
+
