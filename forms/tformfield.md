@@ -342,6 +342,7 @@ class _FormKeyExampleState extends State<FormKeyExample> {
    
 🧮 Önemli Metotlar
 
+
 | Metot        | Açıklama                                                                                           |
 | ------------ | -------------------------------------------------------------------------------------------------- |
 | `validate()` | Tüm `TextFormField` alanlarındaki `validator` fonksiyonlarını çalıştırır. Geçerliyse `true` döner. |
@@ -350,6 +351,8 @@ class _FormKeyExampleState extends State<FormKeyExample> {
 
 
 🧠 Kısa Örnek — Form Resetleme
+
+
 ```dart
 _formKey.currentState!.reset();
 ```
@@ -357,3 +360,153 @@ _formKey.currentState!.reset();
 Bu komut formdaki tüm alanları temizler.
 
 Genellikle “Temizle” veya “Sıfırla” butonlarında kullanılır.
+
+
+### 🧩 Bir Sayfada Birden Fazla FormKey Kullanımı
+
+Flutter’da her Form widget’ı kendi FormKey’ine sahip olabilir.
+
+Bu sayede her formu bağımsız olarak doğrulayabilir, kaydedebilir veya sıfırlayabilirsin.
+
+🎯 Mantık
+
+Her form için ayrı bir GlobalKey<FormState> oluşturulur.
+
+Her Form widget’ına kendi key’i atanır.
+
+Doğrulama (validate()), kaydetme (save()) ve sıfırlama (reset()) işlemleri tek tek yapılabilir.
+
+🧠 Örnek Kod
+
+
+```dart
+import 'package:flutter/material.dart';
+
+class MultiFormExample extends StatefulWidget {
+  @override
+  State<MultiFormExample> createState() => _MultiFormExampleState();
+}
+
+class _MultiFormExampleState extends State<MultiFormExample> {
+  // 1️⃣ Her form için ayrı FormKey oluşturuluyor
+  final _loginFormKey = GlobalKey<FormState>();
+  final _registerFormKey = GlobalKey<FormState>();
+
+  // 2️⃣ Controller'lar
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _emailController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Birden Fazla Form Örneği")),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            // 🔹 GİRİŞ FORMU
+            Form(
+              key: _loginFormKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Giriş Formu", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  TextFormField(
+                    controller: _usernameController,
+                    decoration: InputDecoration(labelText: "Kullanıcı Adı"),
+                    validator: (value) => value!.isEmpty ? "Kullanıcı adı zorunlu" : null,
+                  ),
+                  TextFormField(
+                    controller: _passwordController,
+                    decoration: InputDecoration(labelText: "Şifre"),
+                    obscureText: true,
+                    validator: (value) => value!.length < 6 ? "En az 6 karakter" : null,
+                  ),
+                  SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      if (_loginFormKey.currentState!.validate()) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text("Giriş formu geçerli ✅")),
+                        );
+                      }
+                    },
+                    child: Text("Giriş Yap"),
+                  ),
+                ],
+              ),
+            ),
+
+            Divider(height: 40, thickness: 2),
+
+            // 🔹 KAYIT FORMU
+            Form(
+              key: _registerFormKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Kayıt Formu", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  TextFormField(
+                    controller: _emailController,
+                    decoration: InputDecoration(labelText: "E-posta"),
+                    validator: (value) =>
+                        value!.contains("@") ? null : "Geçerli bir e-posta girin",
+                  ),
+                  SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      if (_registerFormKey.currentState!.validate()) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text("Kayıt formu geçerli ✅")),
+                        );
+                      }
+                    },
+                    child: Text("Kayıt Ol"),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    _passwordController.dispose();
+    _emailController.dispose();
+    super.dispose();
+  }
+}
+
+```
+
+
+🔍 Açıklama
+
+
+| Kısım                                       | Açıklama                             |
+| ------------------------------------------- | ------------------------------------ |
+| `_loginFormKey`                             | Giriş formunu yönetir                |
+| `_registerFormKey`                          | Kayıt formunu yönetir                |
+| `Form(key: _loginFormKey, ...)`             | Form’a kendi anahtarı atanır         |
+| `_loginFormKey.currentState!.validate()`    | Sadece bu formun doğrulamasını yapar |
+| `_registerFormKey.currentState!.validate()` | Diğer formu etkilemez                |
+
+
+
+⚠️ Dikkat Edilmesi Gerekenler
+
+Her Form kendi içinde bağımsız çalışır.
+
+Aynı sayfada olsalar bile, key’ler çakışmaz çünkü her biri GlobalKey olarak benzersizdir.
+
+Eğer formu sıfırlamak istersen:
+
+```dart
+_loginFormKey.currentState!.reset();
+_registerFormKey.currentState!.reset();
+```
