@@ -201,4 +201,22 @@ class _LoginFormState extends State<LoginForm> {
 | `onFieldSubmitted` | Enter’a basıldığında çalışır  | `Function(String)`            |
 
 
+## ⚙️ FormState ile Kullanımı
 
+Formu kontrol etmek için:
+```dart
+_formKey.currentState!.validate(); // Tüm validator’ları çalıştırır
+_formKey.currentState!.save(); // onSaved metodlarını çalıştırır
+_formKey.currentState!.reset(); // Formu sıfırlar
+```
+
+## 🎯 Sonuç
+
+Özellik	Ne İşe Yarar
+
+- `TextFormField`	Form içinde metin girişleri için gelişmiş widget
+- `validator`	Hatalı girişleri önler
+- `controller`	Metin kontrolü sağlar
+- `onSaved`	Form kaydedildiğinde değerleri işler
+- `FormState`	Tüm formu yönetir
+- `GlobalKey<FormState>`	Form’a erişimi sağlar
