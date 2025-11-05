@@ -510,3 +510,114 @@ Eğer formu sıfırlamak istersen:
 _loginFormKey.currentState!.reset();
 _registerFormKey.currentState!.reset();
 ```
+
+
+## 🧩 onSaved Metodu Nedir?
+
+`onSaved`, `TextFormField`’in bir özelliğidir ve Form üzerindeki `FormState.save()` metodu çağrıldığında otomatik olarak çalışır.
+
+Yani kullanıcı formu kaydetmek istediğinde, bu metot devreye girer ve genellikle kullanıcının girdiği değeri bir değişkende saklamak için kullanılır.
+
+### ⚙️ Kullanım Mantığı
+
+Her `TextFormField` bir `onSaved` fonksiyonuna sahip olabilir.
+
+`FormState.save()` çağrıldığında, Flutter tüm `onSaved` fonksiyonlarını tek tek çalıştırır.
+
+Her alanın girdisi, senin belirttiğin değişkene kaydedilir.
+
+🧠 Temel Yapısı
+
+```dart
+TextFormField(
+  decoration: InputDecoration(labelText: 'Adınız'),
+  onSaved: (value) {
+    // value, kullanıcının girdiği değerdir
+    _ad = value!;
+  },
+);
+```
+
+🔸 Burada value parametresi, kullanıcı TextField’a ne yazdıysa onu temsil eder.
+🔸 save() çağrıldığında onSaved tetiklenir.
+
+
+🧾 Tam Örnek
+
+Aşağıda onSaved’in nasıl çalıştığını gösteren bir örnek var 👇
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(home: MyFormPage()));
+}
+
+class MyFormPage extends StatefulWidget {
+  @override
+  _MyFormPageState createState() => _MyFormPageState();
+}
+
+class _MyFormPageState extends State<MyFormPage> {
+  final _formKey = GlobalKey<FormState>();
+
+  String _ad = '';
+  String _email = '';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('onSaved Örneği')),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Ad'),
+                onSaved: (value) {
+                  _ad = value!;
+                },
+              ),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'E-posta'),
+                onSaved: (value) {
+                  _email = value!;
+                },
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                child: Text('Kaydet'),
+                onPressed: () {
+                  // Tüm alanları kaydet
+                  _formKey.currentState!.save();
+
+                  // Kaydedilen değerleri göster
+                  print('Ad: $_ad');
+                  print('Email: $_email');
+
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Form Kaydedildi ✅')),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+
+⚠️ Dikkat Edilecek Noktalar
+
+| Durum                                                           | Açıklama                                                                   |
+| --------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| 🔹 `onSaved` yalnızca `FormState.save()` çağrıldığında çalışır. | Yani kullanıcı yazarken değil, **form kaydedildiğinde**.                   |
+| 🔹 `validator` metodu varsa önce doğrulama yapılır.             | Eğer `FormState.validate()` false dönerse, `save()` genelde çalıştırılmaz. |
+| 🔹 `controller` kullanıyorsan, `onSaved`’e gerek kalmayabilir.  | Çünkü `controller.text` ile doğrudan erişebilirsin.                        |
+
+
+
