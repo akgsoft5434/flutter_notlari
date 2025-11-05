@@ -77,6 +77,7 @@ validator: (value) {
 ### 3. onSaved
 
 Form kaydedildiğinde (örneğin formKey.currentState!.save() çağrıldığında) tetiklenir.
+
 ```dart
 onSaved: (value) {
   print('Kaydedilen değer: $value');
@@ -85,7 +86,7 @@ onSaved: (value) {
 
 ### 4. decoration
 
-InputDecoration ile görsel düzenleme yapılır.
+`InputDecoration` ile görsel düzenleme yapılır.
 
 ```dart
 decoration: InputDecoration(
@@ -94,4 +95,16 @@ decoration: InputDecoration(
   border: OutlineInputBorder(),
   prefixIcon: Icon(Icons.lock),
 ),
+```
+
+
+### 5. onChanged ve onFieldSubmitted
+
+`onChanged:` Her karakter yazıldığında çalışır
+
+`onFieldSubmitted:` Klavyeden "Enter" (Done) tuşuna basıldığında çalışır.
+
+```dart
+onChanged: (value) => print('Yazıldı: $value'),
+onFieldSubmitted: (value) => print('Gönderildi: $value'),
 ```
