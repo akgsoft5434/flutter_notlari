@@ -187,4 +187,18 @@ class _LoginFormState extends State<LoginForm> {
 }
 ```
 
+### 🧾 Sık Kullanılan Özellikler Özeti
+
+| Özellik            | Açıklama                      | Tip                           |
+| ------------------ | ----------------------------- | ----------------------------- |
+| `controller`       | Metin kontrolü sağlar         | `TextEditingController`       |
+| `validator`        | Doğrulama yapar               | `Function(String?) → String?` |
+| `onSaved`          | Form kaydedildiğinde çağrılır | `Function(String?)`           |
+| `decoration`       | Görsel ayarlar                | `InputDecoration`             |
+| `keyboardType`     | Klavye türü                   | `TextInputType`               |
+| `obscureText`      | Metni gizler (şifre)          | `bool`                        |
+| `onChanged`        | Her değişiklikte çalışır      | `Function(String)`            |
+| `onFieldSubmitted` | Enter’a basıldığında çalışır  | `Function(String)`            |
+
+
 
