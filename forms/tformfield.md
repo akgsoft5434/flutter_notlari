@@ -57,6 +57,7 @@ TextFormField(
 ### 2. validator
 
 Form gönderilmeden önce girilen veriyi doğrular.
+
 ```dart
 validator: (value) {
   if (value == null || value.isEmpty) {
@@ -73,5 +74,24 @@ validator: (value) {
 
 🔸 Metin döndürürsen, bu metin hata mesajı olarak ekranda görünür.
 
+### 3. onSaved
 
+Form kaydedildiğinde (örneğin formKey.currentState!.save() çağrıldığında) tetiklenir.
+```dart
+onSaved: (value) {
+  print('Kaydedilen değer: $value');
+},
+```
 
+### 4. decoration
+
+InputDecoration ile görsel düzenleme yapılır.
+
+```dart
+decoration: InputDecoration(
+  labelText: 'Şifre',
+  hintText: 'Şifrenizi girin',
+  border: OutlineInputBorder(),
+  prefixIcon: Icon(Icons.lock),
+),
+```
