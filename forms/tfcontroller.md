@@ -80,7 +80,44 @@ myController.addListener(() {
 });
 ```
 
-💡 Bu yöntem onChanged ile benzerdir ama daha kontrolcü düzeyinde çalışır,
-birden fazla TextField üzerinde aynı anda işlem yapmana olanak tanır.
+💡 Bu yöntem onChanged ile benzerdir ama daha kontrolcü düzeyinde çalışır, birden fazla TextField üzerinde aynı anda işlem yapmana olanak tanır.
 
+## ⚠️ dispose() Kullanımı (Çok Önemli)
+
+Eğer TextEditingController bir StatefulWidget içinde kullanılıyorsa, widget ekrandan kalktığında dispose() edilmelidir.
+```dart
+@override
+void dispose() {
+  myController.dispose();
+  super.dispose();
+}
+```
+
+Aksi halde bellek sızıntısı (memory leak) oluşabilir.
+
+Bu, özellikle çok sayıda TextField bulunan sayfalarda performans sorunlarına yol açar.
+
+## 🧾 Sık Kullanılan Özellikler
+
+
+| Özellik / Metot | Açıklama                               | Örnek                              |
+| --------------- | -------------------------------------- | ---------------------------------- |
+| `text`          | Metnin tamamını alır veya değiştirir   | `myController.text = "Yeni metin"` |
+| `selection`     | İmleç (cursor) konumunu kontrol eder   | `myController.selection`           |
+| `clear()`       | Metni tamamen siler                    | `myController.clear()`             |
+| `addListener()` | Metin her değiştiğinde tetiklenir      | `myController.addListener(() {})`  |
+| `dispose()`     | Controller’ı kapatır, belleği temizler | `myController.dispose()`           |
+
+
+## 🎯 Gerçek Hayatta Kullanım Senaryoları
+
+- Login Formları → Kullanıcı adı ve şifreyi almak
+
+- Arama Kutuları → Yazılan metni anlık olarak filtrelemek
+
+- Form Validasyonu → Boş alan kontrolü yapmak
+
+- Metin Temizleme Butonları → Kullanıcının yazdığı metni sıfırlamak
+
+- Karakter Sayacı → Kullanıcının ne kadar yazdığını göstermek
 
