@@ -327,3 +327,33 @@ class _FormKeyExampleState extends State<FormKeyExample> {
   }
 }
 ```
+
+🧾 Adım Adım Açıklama
+
+
+| Adım   | Açıklama                                                                                                     |
+| ------ | ------------------------------------------------------------------------------------------------------------ |
+| **1.** | `GlobalKey<FormState>` tanımlanır → bu, formun kontrolcüsüdür.                                               |
+| **2.** | `TextEditingController` ile kullanıcıdan veri alınır.                                                        |
+| **3.** | `Form` widget’ına `key` olarak `_formKey` verilir.                                                           |
+| **4.** | `TextFormField` içinde `validator` fonksiyonu yazılır.                                                       |
+| **5.** | Butona basıldığında `_formKey.currentState!.validate()` çağrılır → bütün alanların doğruluğu kontrol edilir. |
+
+   
+🧮 Önemli Metotlar
+
+| Metot        | Açıklama                                                                                           |
+| ------------ | -------------------------------------------------------------------------------------------------- |
+| `validate()` | Tüm `TextFormField` alanlarındaki `validator` fonksiyonlarını çalıştırır. Geçerliyse `true` döner. |
+| `save()`     | Her alanın `onSaved` fonksiyonunu çalıştırır. (Veri kaydetmek için)                                |
+| `reset()`    | Formu sıfırlar, tüm alanları boş hale getirir.                                                     |
+
+
+🧠 Kısa Örnek — Form Resetleme
+```dart
+_formKey.currentState!.reset();
+```
+
+Bu komut formdaki tüm alanları temizler.
+
+Genellikle “Temizle” veya “Sıfırla” butonlarında kullanılır.
