@@ -108,3 +108,83 @@ decoration: InputDecoration(
 onChanged: (value) => print('Yazıldı: $value'),
 onFieldSubmitted: (value) => print('Gönderildi: $value'),
 ```
+
+
+### 🧩 Örnek – Giriş Formu
+
+```dart
+import 'package:flutter/material.dart';
+
+class LoginForm extends StatefulWidget {
+  @override
+  _LoginFormState createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  final _formKey = GlobalKey<FormState>();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  void _submitForm() {
+    if (_formKey.currentState!.validate()) {
+      print('E-posta: ${emailController.text}');
+      print('Şifre: ${passwordController.text}');
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Giriş Formu')),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              TextFormField(
+                controller: emailController,
+                decoration: InputDecoration(labelText: 'E-posta'),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'E-posta boş olamaz';
+                  } else if (!value.contains('@')) {
+                    return 'Geçerli bir e-posta girin';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 16),
+              TextFormField(
+                controller: passwordController,
+                obscureText: true,
+                decoration: InputDecoration(labelText: 'Şifre'),
+                validator: (value) {
+                  if (value == null || value.length < 6) {
+                    return 'En az 6 karakter girin';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 24),
+              ElevatedButton(
+                onPressed: _submitForm,
+                child: Text('Giriş Yap'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+
