@@ -235,3 +235,95 @@ _formKey.currentState!.reset(); // Formu sıfırlar
 - `onSaved`	Form kaydedildiğinde değerleri işler
 - `FormState`	Tüm formu yönetir
 - `GlobalKey<FormState>`	Form’a erişimi sağlar
+
+
+
+## 🧩 FormKey Nedir?
+
+`FormKey`, bir formu tanımlamak ve kontrol etmek için kullanılır.
+
+Flutter’da `TextFormField` bileşenlerini tek bir form içinde yönetebilmek, ve formun doğrulamasını (validation) ya da kaydetme işlemini (save) yapabilmek için gereklidir.
+
+### 🔑 Temel Mantık
+
+Flutter’da bir Form widget’ı kullanıldığında, onun benzersiz bir anahtarı (key) olmalıdır.
+
+Bu key sayesinde:
+
+Formun geçerli (valid) olup olmadığını kontrol edebilirsin.
+
+Formdaki tüm alanları kaydedebilirsin (save).
+
+Gerekirse sıfırlayabilirsin (reset).
+
+Bu key bir GlobalKey<FormState> türündedir.
+
+🧠 Örnek
+
+```dart
+import 'package:flutter/material.dart';
+
+class FormKeyExample extends StatefulWidget {
+  @override
+  State<FormKeyExample> createState() => _FormKeyExampleState();
+}
+
+class _FormKeyExampleState extends State<FormKeyExample> {
+  // 1️⃣ Formun anahtarını oluşturuyoruz
+  final _formKey = GlobalKey<FormState>();
+
+  // 2️⃣ TextFormField kontrolcüsü
+  final _nameController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('FormKey Örneği')),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          // 3️⃣ Form widget’ına anahtarı veriyoruz
+          key: _formKey,
+          child: Column(
+            children: [
+              TextFormField(
+                controller: _nameController,
+                decoration: InputDecoration(labelText: 'Adınızı girin'),
+                validator: (value) {
+                  // 4️⃣ Boş mu kontrol ediyoruz
+                  if (value == null || value.isEmpty) {
+                    return 'Lütfen adınızı girin';
+                  }
+                  return null; // Hata yoksa null döner
+                },
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  // 5️⃣ Form geçerli mi kontrol ediyoruz
+                  if (_formKey.currentState!.validate()) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Form Geçerli ✅')),
+                    );
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Form Geçersiz ❌')),
+                    );
+                  }
+                },
+                child: Text('Gönder'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    super.dispose();
+  }
+}
+```
