@@ -15,7 +15,7 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 - [TextFormField](forms/tformfield.md)
 - [CheckboxListTile](forms/checkbox.md)
 - [RadioListTile](forms/radio.md)
-- 
+- [Slider ve RangeSlider](forms/slider.md)
 
 
 
