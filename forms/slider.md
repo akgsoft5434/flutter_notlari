@@ -83,4 +83,66 @@ class _SliderExampleState extends State<SliderExample> {
 | `onChangeEnd`   | Kullanıcı sürüklemeyi bitirdiğinde çalışır                         |
 
 
+## 🧩 Örnek
+
+```dart
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(home: ColorSlider());
+  }
+}
+
+class ColorSlider extends StatefulWidget {
+  @override
+  _ColorSliderState createState() => _ColorSliderState();
+}
+
+class _ColorSliderState extends State<ColorSlider> {
+  double _red = 100;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Renk Ayarlayıcı")),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            height: 150,
+            width: 150,
+            color: Color.fromRGBO(_red.toInt(), 0, 0, 1),
+          ),
+          Slider(
+            value: _red,
+            min: 0,
+            max: 255,
+            activeColor: Colors.red,
+            onChanged: (value) {
+              setState(() {
+                _red = value;
+              });
+            },
+          ),
+          Text("Kırmızı Değer: ${_red.toInt()}"),
+        ],
+      ),
+    );
+  }
+}
+
+```
+
+<img src="../assets/ezgif-5b2bdca37236b7.gif" width="300">
+
 
