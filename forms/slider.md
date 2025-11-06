@@ -150,3 +150,28 @@ class _ColorSliderState extends State<ColorSlider> {
 <img src="../assets/ezgif-5b2bdca37236b7.gif" width="300">
 
 
+## 🔁 RangeSlider (İki Değerli Slider)
+
+Eğer bir aralık seçmek istiyorsan (min ve max gibi):
+
+```dart
+
+RangeValues _values = RangeValues(10, 50);
+
+RangeSlider(
+  values: _values,
+  min: 0,
+  max: 100,
+  divisions: 10,
+  labels: RangeLabels(
+    _values.start.round().toString(),
+    _values.end.round().toString(),
+  ),
+  onChanged: (RangeValues newValues) {
+    setState(() {
+      _values = newValues;
+    });
+  },
+)
+
+```
