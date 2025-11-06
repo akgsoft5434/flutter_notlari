@@ -156,22 +156,71 @@ Eğer bir aralık seçmek istiyorsan (min ve max gibi):
 
 ```dart
 
-RangeValues _values = RangeValues(10, 50);
+import 'package:flutter/material.dart';
 
-RangeSlider(
-  values: _values,
-  min: 0,
-  max: 100,
-  divisions: 10,
-  labels: RangeLabels(
-    _values.start.round().toString(),
-    _values.end.round().toString(),
-  ),
-  onChanged: (RangeValues newValues) {
-    setState(() {
-      _values = newValues;
-    });
-  },
-)
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(home: SliderExample());
+  }
+}
+
+class SliderExample extends StatefulWidget {
+  @override
+  _SliderExampleState createState() => _SliderExampleState();
+}
+
+class _SliderExampleState extends State<SliderExample> {
+  RangeValues _values = RangeValues(10, 50);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Flutter Slider Örneği")),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            RangeSlider(
+              values: _values,
+              min: 0,
+              max: 100,
+              divisions: 10,
+              labels: RangeLabels(
+                _values.start.round().toString(),
+                _values.end.round().toString(),
+              ),
+              onChanged: (RangeValues newValues) {
+                setState(() {
+                  _values = newValues;
+                });
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 ```
+
+<img src="../assets/ezgif-57f48b9d6b190c.gif" width="300">
+
+
+### 📘 Özet
+
+| Özellik         | Açıklama                             |
+| --------------- | ------------------------------------ |
+| **Slider**      | Tek değer seçimi                     |
+| **RangeSlider** | İki değer (başlangıç – bitiş) seçimi |
+| **divisions**   | Adım sayısını belirler               |
+| **label**       | Üstte değer gösterir                 |
+| **onChanged**   | Değer değişimini yakalar             |
+
+
