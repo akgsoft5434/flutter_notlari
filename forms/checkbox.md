@@ -75,3 +75,86 @@ class _MyAppState extends State<MyApp> {
 | **tileColor**       | `Color?`                  | Tüm satırın arka plan rengi.                                  |
 | **selected**        | `bool`                    | `true` olursa yazı stili vurgulanır (örneğin, kalın yazı).    |
 | **dense**           | `bool`                    | Daha dar bir görünüm sağlar.                                  |
+
+
+## 🧠 Kullanım Mantığı
+
+`CheckboxListTile` genellikle bir durum değişkeni (state) ile birlikte kullanılır.
+
+Örneğin bir bool değişken, seçili olup olmadığını takip eder:
+
+`bool _isChecked = false;`
+
+
+Daha sonra `setState()` içinde değeri güncelleriz.Bu, Flutter’a arayüzü yeniden çizmesi gerektiğini söyler.
+
+## 🧠 Checkbox’ın Konumunu Değiştirme
+
+```dart
+CheckboxListTile(
+  title: Text("Koyu Tema"),
+  value: _darkMode,
+  controlAffinity: ListTileControlAffinity.leading, // Checkbox başa alındı
+  onChanged: (bool? newValue) {
+    setState(() {
+      _darkMode = newValue!;
+    });
+  },
+);
+```
+
+📋 Açıklama:
+
+`controlAffinity: ListTileControlAffinity.leading` → Checkbox başta görünür.
+
+trailing efekti yerine geçer.
+
+## 💡 Birden Fazla Checkbox Kullanımı
+```dart
+bool _music = false;
+bool _sports = false;
+bool _movies = false;
+```
+
+
+```dart
+Column(
+  children: [
+    CheckboxListTile(
+      title: Text("Müzik"),
+      value: _music,
+      onChanged: (value) {
+        setState(() => _music = value!);
+      },
+    ),
+    CheckboxListTile(
+      title: Text("Spor"),
+      value: _sports,
+      onChanged: (value) {
+        setState(() => _sports = value!);
+      },
+    ),
+    CheckboxListTile(
+      title: Text("Filmler"),
+      value: _movies,
+      onChanged: (value) {
+        setState(() => _movies = value!);
+      },
+    ),
+  ],
+);
+```
+
+📋 Açıklama:
+
+Kullanıcı birden fazla seçeneği aynı anda işaretleyebilir.
+
+Her biri farklı bir bool değişkenle yönetilir.
+
+## ⚠️ Dikkat Edilmesi Gerekenler
+
+`onChanged` null ise Checkbox pasif (devre dışı) görünür.
+
+value değişkeni null olamaz — başlangıçta false vermek gerekir.
+
+State yönetimi unutulmamalıdır (örn: setState, Provider, Bloc vb.).
