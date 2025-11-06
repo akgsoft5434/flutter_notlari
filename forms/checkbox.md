@@ -309,6 +309,22 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
 }
 
 ```
+
+
+## 💻 Kullanılan Emojiler ve Kodları
+
+| Emoji | Açıklama   | Unicode Kodu        | Flutter Kullanımı                      |
+| :---: | :--------- | :------------------ | :------------------------------------- |
+|   🐍  | Python     | `\u{1F40D}`         | `Text('\u{1F40D} Python')`             |
+|   ☕   | Java       | `\u{2615}`          | `Text('\u{2615} Java')`                |
+|   💻  | C#         | `\u{1F4BB}`         | `Text('\u{1F4BB} C#')`                 |
+|   🦋  | Flutter    | `\u{1F98B}`         | `Text('\u{1F98B} Flutter')`            |
+|  🕸️  | JavaScript | `\u{1F578}\u{FE0F}` | `Text('\u{1F578}\u{FE0F} JavaScript')` |
+|   🐘  | PHP        | `\u{1F418}`         | `Text('\u{1F418} PHP')`                |
+|   🧠  | C++        | `\u{1F9E0}`         | `Text('\u{1F9E0} C++')`                |
+
+
+
 ## ⚠️ Dikkat Edilmesi Gerekenler
 
 `onChanged` null ise Checkbox pasif (devre dışı) görünür.
