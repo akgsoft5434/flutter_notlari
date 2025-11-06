@@ -66,6 +66,10 @@ class _SliderExampleState extends State<SliderExample> {
 }
 ```
 
+<img src="../assets/ezgif-583b2fdd05ffd5.gif" width="300">
+
+
+
 
 ### ⚙️ Önemli Parametreler
 
