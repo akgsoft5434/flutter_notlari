@@ -14,7 +14,7 @@ Bu repo, Flutter ve Dart konularını öğrenmek isteyenler için hazırlanmış
 - [TextField - controller özelliği](forms/tfcontroller.md)
 - [TextFormField](forms/tformfield.md)
 - [CheckboxListTile](forms/checkbox.md)
-- [CheckboxListTile](forms/tformfield.md)
+- [RadioListTile](forms/radio.md)
 - 
 
 
