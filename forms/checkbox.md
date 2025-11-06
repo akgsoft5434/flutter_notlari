@@ -6,20 +6,55 @@
 
 Kısacası, bir satır içinde checkbox + metin + ikon yerleştirmek için kullanılır.
 
-## 🧩 Yapısı
-
-Temel kullanım şekli şöyledir:
+## 🧩 Örnek
 
 ```dart
-CheckboxListTile(
-  title: Text('Bildirimleri aç'),
-  value: _isChecked,
-  onChanged: (bool? newValue) {
-    setState(() {
-      _isChecked = newValue!;
-    });
-  },
-);
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isChecked = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Form Elemanları"),
+          backgroundColor: Colors.orange.shade200,
+        ),
+        body: Column(
+          children: [
+            CheckboxListTile(
+              title: Text("Başlık"),
+              value: _isChecked,
+              subtitle: Text("Alt Başlık"),
+              checkColor: Colors.red,
+              activeColor: Colors.orange,
+              secondary: Icon(Icons.add_alarm),
+              onChanged: (_secilendeger) {
+                setState(() {
+                  _isChecked = _secilendeger!;
+                });
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 ```
 
 ## ⚙️ Parametreler (Önemli Özellikler)
