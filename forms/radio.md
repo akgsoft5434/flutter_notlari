@@ -28,6 +28,7 @@ RadioListTile<T>(
 Aşağıdaki örnekte bir “ödeme yöntemi” seçimi yapılmıştır 👇
 
 ```dart
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -41,58 +42,73 @@ class PaymentScreen extends StatefulWidget {
   _PaymentScreenState createState() => _PaymentScreenState();
 }
 
-enum PaymentMethod { krediKarti, nakit, havale }
-
 class _PaymentScreenState extends State<PaymentScreen> {
-  PaymentMethod? _seciliYontem = PaymentMethod.krediKarti;
+  String? _selectedMethod = "💳 Kredi Kartı"; // Başlangıçta seçili değer
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Ödeme Yöntemi Seç")),
-      body: Column(
-        children: [
-          RadioListTile<PaymentMethod>(
-            title: const Text('Kredi Kartı'),
-            value: PaymentMethod.krediKarti,
-            groupValue: _seciliYontem,
-            onChanged: (value) {
-              setState(() {
-                _seciliYontem = value;
-              });
-            },
-          ),
-          RadioListTile<PaymentMethod>(
-            title: const Text('Nakit'),
-            value: PaymentMethod.nakit,
-            groupValue: _seciliYontem,
-            onChanged: (value) {
-              setState(() {
-                _seciliYontem = value;
-              });
-            },
-          ),
-          RadioListTile<PaymentMethod>(
-            title: const Text('Havale / EFT'),
-            value: PaymentMethod.havale,
-            groupValue: _seciliYontem,
-            onChanged: (value) {
-              setState(() {
-                _seciliYontem = value;
-              });
-            },
-          ),
-          const SizedBox(height: 20),
-          Text(
-            "Seçili yöntem: ${_seciliYontem.toString().split('.').last}",
-            style: const TextStyle(fontSize: 18),
-          ),
-        ],
+      appBar: AppBar(title: const Text("💰 Ödeme Yöntemi Seç")),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          children: [
+            RadioListTile<String>(
+              value: "💳 Kredi Kartı",
+              groupValue: _selectedMethod,
+              activeColor: Colors.blueAccent,
+              title: const Text("💳 Kredi Kartı"),
+              subtitle: const Text("Banka veya kredi kartı ile ödeme yap"),
+              secondary: const Icon(Icons.credit_card),
+              onChanged: (value) {
+                setState(() {
+                  _selectedMethod = value;
+                });
+              },
+            ),
+            RadioListTile<String>(
+              value: "💵 Nakit",
+              groupValue: _selectedMethod,
+              activeColor: Colors.green,
+              title: const Text("💵 Nakit"),
+              subtitle: const Text("Teslimatta elden ödeme"),
+              secondary: const Icon(Icons.money),
+              onChanged: (value) {
+                setState(() {
+                  _selectedMethod = value;
+                });
+              },
+            ),
+            RadioListTile<String>(
+              value: "🏦 Havale / EFT",
+              groupValue: _selectedMethod,
+              activeColor: Colors.orange,
+              title: const Text("🏦 Havale / EFT"),
+              subtitle: const Text("Banka transferi ile ödeme yap"),
+              secondary: const Icon(Icons.account_balance),
+              onChanged: (value) {
+                setState(() {
+                  _selectedMethod = value;
+                });
+              },
+            ),
+            const SizedBox(height: 30),
+            Text(
+              "Seçilen yöntem: $_selectedMethod",
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
+
+
 ```
+
+<img src="../assets/ezgif-8faabb9edcd700.gif" width="300">
+
 
 🧩 Nasıl Çalışır?
 
