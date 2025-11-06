@@ -151,6 +151,164 @@ Kullanıcı birden fazla seçeneği aynı anda işaretleyebilir.
 
 Her biri farklı bir bool değişkenle yönetilir.
 
+
+## 🧩 Örnek
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: LanguageSelectionPage(),
+    );
+  }
+}
+
+class LanguageSelectionPage extends StatefulWidget {
+  @override
+  _LanguageSelectionPageState createState() => _LanguageSelectionPageState();
+}
+
+class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
+  bool _dart = false;
+  bool _python = false;
+  bool _java = false;
+  bool _cpp = false;
+  bool _js = false;
+  bool _php = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("💻 Hangi dilleri biliyorsunuz?"),
+        backgroundColor: Colors.amber.shade100,
+      ),
+      body: ListView(
+        children: [
+          CheckboxListTile(
+            title: Text("🦋 Dart"),
+            subtitle: Text("Flutter geliştirmede kullanılır."),
+            value: _dart,
+            activeColor: Colors.indigo,
+            onChanged: (bool? value) {
+              setState(() {
+                _dart = value!;
+              });
+            },
+          ),
+          CheckboxListTile(
+            title: Text("🐍 Python"),
+            subtitle: Text(
+              "Veri bilimi, yapay zeka ve otomasyon için popülerdir.",
+            ),
+            value: _python,
+            activeColor: Colors.green,
+            onChanged: (bool? value) {
+              setState(() {
+                _python = value!;
+              });
+            },
+          ),
+          CheckboxListTile(
+            title: Text("☕ Java"),
+            subtitle: Text(
+              "Android uygulamaları ve büyük sistemlerde kullanılır.",
+            ),
+            value: _java,
+            activeColor: Colors.orange,
+            onChanged: (bool? value) {
+              setState(() {
+                _java = value!;
+              });
+            },
+          ),
+          CheckboxListTile(
+            title: Text("💎 C++"),
+            subtitle: Text(
+              "Oyun motorları ve yüksek performanslı uygulamalarda yaygın.",
+            ),
+            value: _cpp,
+            activeColor: Colors.blueGrey,
+            onChanged: (bool? value) {
+              setState(() {
+                _cpp = value!;
+              });
+            },
+          ),
+          CheckboxListTile(
+            title: Text("🟨 JavaScript"),
+            subtitle: Text("Web siteleri ve frontend geliştirmede kullanılır."),
+            value: _js,
+            activeColor: Colors.yellow[700],
+            onChanged: (bool? value) {
+              setState(() {
+                _js = value!;
+              });
+            },
+          ),
+          CheckboxListTile(
+            title: Text("🐘 PHP"),
+            subtitle: Text("Web backend geliştirmede kullanılır."),
+            value: _php,
+            activeColor: Colors.purple,
+            onChanged: (bool? value) {
+              setState(() {
+                _php = value!;
+              });
+            },
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ElevatedButton.icon(
+              icon: Icon(Icons.check_circle_outline),
+              label: Text("Kaydet"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.amber.shade200,
+                padding: EdgeInsets.symmetric(vertical: 14),
+                textStyle: TextStyle(fontSize: 18, color: Colors.white),
+              ),
+              onPressed: () {
+                String selected = "";
+                if (_dart) selected += "🦋 Dart, ";
+                if (_python) selected += "🐍 Python, ";
+                if (_java) selected += "☕ Java, ";
+                if (_cpp) selected += "💎 C++, ";
+                if (_js) selected += "🟨 JavaScript, ";
+                if (_php) selected += "🐘 PHP, ";
+
+                if (selected.isEmpty) {
+                  selected = "Hiçbir dil seçilmedi 😢";
+                } else {
+                  // Sondaki virgülü kaldır
+                  selected = selected.substring(0, selected.length - 2);
+                }
+
+                // SnackBar göster
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(selected, style: TextStyle(fontSize: 16)),
+                    backgroundColor: Colors.redAccent,
+
+                    duration: Duration(seconds: 3),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+```
 ## ⚠️ Dikkat Edilmesi Gerekenler
 
 `onChanged` null ise Checkbox pasif (devre dışı) görünür.
