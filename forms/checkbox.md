@@ -310,6 +310,8 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
 
 ```
 
+<img src="../assets/ezgif-8d7b3d420c3c6a.gif" width="300">
+
 
 ## 💻 Kullanılan Emojiler ve Kodları
 
