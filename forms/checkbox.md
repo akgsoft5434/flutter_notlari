@@ -57,6 +57,8 @@ class _MyAppState extends State<MyApp> {
 
 ```
 
+<img src="../assets/ezgif-87852872f70f24.gif" width="300">
+
 ## ⚙️ Parametreler (Önemli Özellikler)
 
 | Parametre           | Tip                       | Açıklama                                                      |
