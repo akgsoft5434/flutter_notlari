@@ -93,3 +93,13 @@ class _PaymentScreenState extends State<PaymentScreen> {
   }
 }
 ```
+
+🧩 Nasıl Çalışır?
+
+`value:` Her bir RadioListTile’ın kendine özgü değeridir.
+
+`groupValue:` Tüm RadioListTile’ların ortak paylaştığı değişken.
+
+👉 Hangi value değeri bu değişkene eşitse, o seçili olur.
+
+`onChanged:` Kullanıcı yeni bir seçim yaptığında çalışır.
