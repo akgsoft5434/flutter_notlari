@@ -109,3 +109,65 @@ Flutter'a "ekrandaki bir şey değişti, ekranı güncelle" der.
 `.toString()` → çıktıyı String yapar
 
 sonuc değişkenine yazar
+
+
+
+
+# ✅ 2. Checkbox – KDV hesaplama (İşaretli ise %20 ekle)
+
+```dart
+
+class KdvOrnek extends StatefulWidget {
+  @override
+  State<KdvOrnek> createState() => _KdvOrnekState();
+}
+
+class _KdvOrnekState extends State<KdvOrnek> {
+  bool kdvEkle = false;
+  final fiyat = TextEditingController();
+  double toplam = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("KDV Hesabı")),
+      body: Padding(
+        padding: EdgeInsets.all(20),
+        child: Column(
+          children: [
+            TextField(
+              controller: fiyat,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(labelText: "Fiyat"),
+            ),
+            Row(
+              children: [
+                Checkbox(
+                  value: kdvEkle,
+                  onChanged: (v) {
+                    setState(() => kdvEkle = v!);
+                  },
+                ),
+                Text("KDV (%20) Ekle"),
+              ],
+            ),
+            ElevatedButton(
+              onPressed: () {
+                double f = double.tryParse(fiyat.text) ?? 0;
+
+                toplam = kdvEkle ? f * 1.20 : f;
+
+                setState(() {});
+              },
+              child: Text("Hesapla"),
+            ),
+            Text("Toplam: $toplam TL", style: TextStyle(fontSize: 22)),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+```
